@@ -22,7 +22,7 @@
 
 ## Files
 - **products.ts**: A list of products having:
-  - id
+  - id 
   - title
   - image
   - avgRating
