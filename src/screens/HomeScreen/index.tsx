@@ -11,7 +11,7 @@ const HomeScreen = () => {
 
     return (
 
-        <View style={tw``}>
+        <View style={tw`mb-36`}>
             <View style={tw`max-w-xl bg-green-400 p-2`}>
                 <View style={tw`mt-12 flex flex-row items-center`}>
                     <Entypo name="chevron-thin-left" size={24} color="#37475a" style={tw`mr-2`} />
