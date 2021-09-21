@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TextInput} from "react-native";
+import {View, Text, TextInput, TouchableOpacity} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import {Entypo, EvilIcons, Feather, Ionicons} from "@expo/vector-icons";
 import product from "../../assets/data/product";
@@ -30,6 +30,19 @@ const ProductScreen = () => {
                     <EvilIcons name="share-apple" size={24} color="black" />
                 </View>
 
+                <TouchableOpacity activeOpacity={0.8}>
+                    <View style={tw`flex flex-row items-center bg-gray-300 py-3 rounded-md shadow-md mb-3 border-2 border-gray-400` }>
+                        <View style={tw`flex flex-1 flex-col`}>
+                            <Text style={tw` ml-2 mb-2`}>2 Colors:</Text>
+                            <Text style={tw`font-bold ml-2`}>Black</Text>
+                        </View>
+
+                        <View>
+                            <Entypo name="chevron-small-right" size={24} color="black" style={tw`mr-2`} />
+                        </View>
+                    </View>
+                </TouchableOpacity>
+
                 <View style={tw`flex flex-row mt-2 mb-4 items-center`}>
                     <Text style={tw`text-black text-2xl font-bold `}>${product?.price || '1.00'}
                     </Text>
@@ -59,10 +72,24 @@ const ProductScreen = () => {
                     <Text style={tw`text-xl text-red-600 font-bold`}>Only 6 left in stock - order soon.</Text>
                 </View>
 
-                <View style={tw`flex items-center flex-row bg-gray-300 w-20 px-4 py-2 rounded-md shadow-md`}>
-                    <Text style={tw`mr-1`}>Qty: 1</Text>
-                    <Entypo name="chevron-down" size={16} color="black" />
-                </View>
+                <TouchableOpacity activeOpacity={0.8}>
+                    <View style={tw`flex items-center flex-row bg-gray-300 w-20 px-4 py-2 rounded-md shadow-md mt-6`}>
+                        <Text style={tw`mr-1`}>Qty: 1</Text>
+                        <Entypo name="chevron-down" size={16} color="black" />
+                    </View>
+                </TouchableOpacity>
+
+                <TouchableOpacity activeOpacity={0.8}>
+                    <View style={tw`bg-yellow-400 flex items-center py-2 rounded-md shadow-md mt-6`}>
+                        <Text style={tw`text-xl`}>Add To Card</Text>
+                    </View>
+                </TouchableOpacity>
+
+                <TouchableOpacity activeOpacity={0.8}>
+                    <View style={tw`bg-yellow-500 flex items-center py-2 rounded-md shadow-md mt-4`}>
+                        <Text style={tw`text-xl`}>Add To Card</Text>
+                    </View>
+                </TouchableOpacity>
 
             </View>
 
