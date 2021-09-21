@@ -59,7 +59,7 @@ const HomeScreen = () => {
                 </View>
 
             </View>
-            <View style={tw`mt-5 ml-4`}>
+            <View style={tw`mt-4 ml-4`}>
                 <Text style={tw`font-bold text-lg`}>RESULTS</Text>
             </View>
             <View style={tw`mt-2 flex`}>
