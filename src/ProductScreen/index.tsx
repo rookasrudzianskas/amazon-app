@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, TextInput, TouchableOpacity, ScrollView} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import {Entypo, EvilIcons, Feather, Ionicons} from "@expo/vector-icons";
@@ -7,6 +7,9 @@ import {Picker} from '@react-native-picker/picker';
 
 
 const ProductScreen = () => {
+
+    const [selectedOption, setSelectedOption] = useState('');
+
     return (
         <View style={tw`flex h-full`}>
             <View style={tw`mb-4`}>
@@ -46,7 +49,12 @@ const ProductScreen = () => {
                     </View>
                 </TouchableOpacity>
 
-                <Picker style={tw`-mt-20 -mb-10`}>
+                <Picker
+                    selectedValue={selectedOption}
+                    onValueChange={(itemValue, itemIndex) => (
+                        setSelectedOption(itemValue)
+                    )}
+                    style={tw`-mt-20 -mb-10`}>
                     {product.options.map(option => (
                         <Picker.Item key={option} label={option} value={option} />
                     ))}
