@@ -6,13 +6,14 @@ interface ButtonProps {
     text: string,
     onPress: () => {},
     color: string,
+    bgcolor: string,
 }
 
-const Button = ({text, onPress, color}: ButtonProps) => {
+const Button = ({text, onPress, color, bgcolor}: ButtonProps) => {
     return (
         <View>
             <TouchableOpacity activeOpacity={0.8} onPress={onPress}>
-                <View style={tw`${color} flex items-center py-2 rounded-md shadow-md mt-6`}>
+                <View style={tw`${color} flex items-center py-2 rounded-md shadow-md mt-6 border-2 border-yellow-${bgcolor}`}>
                     <Text style={tw`text-xl`}>{text || "untitled"}</Text>
                 </View>
             </TouchableOpacity>

@@ -109,11 +109,11 @@ const ProductScreen = () => {
 
                 <View style={tw`mb-24`}>
                     {/*// @ts-ignore*/}
-                    <Button color={'bg-yellow-400'} text={"Add To Card"} onPress={() => {
+                    <Button bgcolor={"500"} color={'bg-yellow-400'} text={"Add To Card"} onPress={() => {
                         console.warn("Hello");
                     }}/>
                     {/*// @ts-ignore*/}
-                    <Button color={'bg-yellow-500'} text={"Buy Now"} onPress={() => {
+                    <Button bgcolor={"600"} color={'bg-yellow-500'} text={"Buy Now"} onPress={() => {
                         console.warn("Hello");
                     }}/>
                 </View>
