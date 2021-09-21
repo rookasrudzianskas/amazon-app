@@ -3,16 +3,17 @@ import {TouchableOpacity, View, Text} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import {Entypo, Ionicons} from "@expo/vector-icons";
 
-const QuantitySelector = () => {
+
+
+const QuantitySelector = ({quantity, setQuantity}) => {
 
     const onMinus = () => {
-
+        setQuantity(Math.max(0, quantity - 1));
     }
 
     const onPlus = () => {
-
+        setQuantity(quantity + 1)
     }
-
 
     return (
         <View>
@@ -24,7 +25,7 @@ const QuantitySelector = () => {
                 </TouchableOpacity>
 
                 <View style={tw``}>
-                    <Text style={tw`px-3`}>1</Text>
+                    <Text style={tw`px-3`}>{quantity}</Text>
                 </View>
 
                 <TouchableOpacity onPress={onPlus} activeOpacity={0.8}>

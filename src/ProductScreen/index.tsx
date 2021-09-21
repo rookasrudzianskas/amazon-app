@@ -10,6 +10,7 @@ import QuantitySelector from "../components/QuantitySelector";
 const ProductScreen = () => {
 
     const [selectedOption, setSelectedOption] = useState(product?.options ? product.options[0] : '');
+    const [quantity, setQuantity] = useState(1);
 
     return (
         <View style={tw`flex h-full`}>
@@ -102,7 +103,7 @@ const ProductScreen = () => {
                 {/*</TouchableOpacity>*/}
 
                 <View style={tw`mt-6`}>
-                    <QuantitySelector/>
+                    <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
                 </View>
 
 
