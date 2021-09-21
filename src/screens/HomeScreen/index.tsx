@@ -20,10 +20,10 @@ const HomeScreen = () => {
 
                         <View style={tw`flex items-center flex-row mt-3`}>
                             <FontAwesome name="star" size={23} color="orange" />
-                            <FontAwesome name="star" size={23} color="orange" />
-                            <FontAwesome name="star" size={23} color="orange" />
-                            <FontAwesome name="star" size={23} color="orange" />
-                            <FontAwesome name="star-half-empty" size={23} color="orange" />
+                            <FontAwesome name="star" size={23} color="orange" style={{marginLeft: 1}} />
+                            <FontAwesome name="star" size={23} color="orange" style={{marginLeft: 1}} />
+                            <FontAwesome name="star" size={23} color="orange" style={{marginLeft: 1}} />
+                            <FontAwesome name="star-half-empty" size={23} color="orange" style={{marginLeft: 1}} />
                             <Text style={tw`ml-2 text-gray-500`}>13.4532</Text>
                         </View>
 
