@@ -5,6 +5,7 @@ import {Entypo, Ionicons} from "@expo/vector-icons";
 
 
 
+// @ts-ignore
 const QuantitySelector = ({quantity, setQuantity}) => {
 
     const onMinus = () => {
