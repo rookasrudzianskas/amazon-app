@@ -31,12 +31,42 @@ const ProductScreen = () => {
                 </View>
 
                 <View style={tw`flex flex-row mt-2 mb-4 items-center`}>
-                    <Text style={tw`text-black text-lg`}>from </Text>
-                    <Text style={tw`text-black text-xl font-bold`}>${product?.price || '1.00'}
-                        {product.oldPrice && <Text style={tw`text-xs font-normal flex line-through`}>${product?.oldPrice}</Text>}
+                    <Text style={tw`text-black text-2xl font-bold `}>${product?.price || '1.00'}
+                    </Text>
+                    {product.oldPrice && <Text style={tw` text-xl font-normal flex line-through ml-2`}>${product?.oldPrice}</Text>}
+                </View>
+
+                <View style={tw``}>
+                    <Text style={tw`text-gray-700`}>No import Fees Deposit & $9.99 shipping to the USA <Text style={tw`text-blue-500`}>Details</Text>
                     </Text>
                 </View>
+
+                <View style={tw`mt-6`}>
+                    <Text style={tw`text-black`}>Available at a lower price from <Text style={tw`text-blue-500`}>other sellers</Text> that may not offer Prime Premium Shipping.
+                    </Text>
+                </View>
+
+                <View style={tw`mt-5`}>
+                    <Text style={tw``}>Arrives: <Text style={tw`font-bold`}>Friday, May 6</Text></Text>
+                </View>
+
+                <View style={tw`flex flex-row items-center mt-6`}>
+                    <Ionicons name="location-outline" size={24} color="black" />
+                    <Text style={tw`text-blue-500 ml-1`}>Deliver to the California, USA</Text>
+                </View>
+
+                <View style={tw`mt-6`}>
+                    <Text style={tw`text-xl text-red-600 font-bold`}>Only 6 left in stock - order soon.</Text>
+                </View>
+
+                <View style={tw`flex items-center flex-row bg-gray-300 w-20 px-4 py-2 rounded-md shadow-md`}>
+                    <Text style={tw`mr-1`}>Qty: 1</Text>
+                    <Entypo name="chevron-down" size={16} color="black" />
+                </View>
+
             </View>
+
+
         </View>
     );
 };
