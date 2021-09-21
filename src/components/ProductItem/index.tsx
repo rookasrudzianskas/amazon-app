@@ -16,7 +16,9 @@ interface ProductItemProps {
     }
 }
 
-const ProductItem = (props: ProductItemProps) => {
+const ProductItem = ({item}: ProductItemProps) => {
+
+
     return (
         <View>
             <View style={tw`m-3`}>
@@ -24,11 +26,11 @@ const ProductItem = (props: ProductItemProps) => {
                 <View>
                     <View style={tw`flex flex-row px-2 border-2 border-gray-200 rounded-md items-center`}>
                         <View style={tw``}>
-                            <Image style={[styles.image, tw``]} source={{uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/products/mouse1.jpg'}} />
+                            <Image style={[styles.image, tw``]} source={{uri: item?.image || ''}} />
                         </View>
 
                         <View style={tw`flex ml-5 mt-5`}>
-                            <Text numberOfLines={3}  style={[styles.textSize, tw`text-lg`]}>Clean Architecture: A Craftsman's Guide to Software  Structure and Design</Text>
+                            <Text numberOfLines={3}  style={[styles.textSize, tw`text-lg`]}>{item?.title || ''}</Text>
 
                             <View style={tw`flex items-center flex-row mt-3`}>
                                 <FontAwesome name="star" size={23} color="orange" />
@@ -41,7 +43,7 @@ const ProductItem = (props: ProductItemProps) => {
 
                             <View style={tw`flex flex-row mt-2 mb-4 items-center`}>
                                 <Text style={tw`text-black text-lg`}>from </Text>
-                                <Text style={tw`text-black text-xl font-bold`}>$123 <Text style={tw`text-xs font-normal flex line-through`}>$323</Text></Text>
+                                <Text style={tw`text-black text-xl font-bold`}>${item?.price} <Text style={tw`text-xs font-normal flex line-through`}>${item?.oldPrice}</Text></Text>
                             </View>
                         </View>
                     </View>
