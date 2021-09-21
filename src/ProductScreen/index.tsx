@@ -50,7 +50,7 @@ const ProductScreen = () => {
                     <View style={tw`flex flex-row items-center bg-gray-300 py-3 rounded-md shadow-md mb-3 border-2 border-gray-400` }>
                         <View style={tw`flex flex-1 flex-col`}>
                             <Text style={tw` ml-2 mb-2`}>2 Colors:</Text>
-                            <Text style={tw`font-bold ml-2`}>Black</Text>
+                            <Text style={tw`font-bold ml-2`}>{selectedOption || 'Black'}</Text>
                         </View>
 
                         <View>
