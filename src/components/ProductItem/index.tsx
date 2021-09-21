@@ -44,7 +44,7 @@ const ProductItem = ({item}: ProductItemProps) => {
 
     {/*// @ts-ignore*/}
                                 {Array(getRandomNumberBetween(1,6)).fill().map((_, i) => (
-                                    <FontAwesome key={i} name="star" size={23} color="orange" />
+                                    <FontAwesome key={i} name={i < Math.floor(item.avgRating) ? 'star' : 'star-o'} size={23} color="orange" />
                                     ))}
 
                                 <Text style={tw`ml-2 text-gray-500`}>13.4532</Text>
