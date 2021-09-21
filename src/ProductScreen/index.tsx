@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TextInput, TouchableOpacity} from "react-native";
+import {View, Text, TextInput, TouchableOpacity, ScrollView} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import {Entypo, EvilIcons, Feather, Ionicons} from "@expo/vector-icons";
 import product from "../../assets/data/product";
@@ -23,6 +23,7 @@ const ProductScreen = () => {
                     </View>
                 </View>
             </View>
+            <ScrollView showsVerticalScrollIndicator={false}>
 
             <View style={tw`px-5`}>
                 <View style={tw`flex items-center flex-row justify-center`}>
@@ -97,6 +98,7 @@ const ProductScreen = () => {
 
             </View>
 
+        </ScrollView>
 
         </View>
     );
