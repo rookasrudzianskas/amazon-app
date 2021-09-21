@@ -21,7 +21,7 @@ const ImageCarousel = ({images}: ImageCarouselProps) => {
             <View style={tw`flex flex-row items-center justify-center mt-6`}>
                 {images?.map((image, index) => (
                     <View style={[styles.dot, {
-
+                        backgroundColor: index === activeIndex ? '#c9c9c9' : '#ededed',
                     }]} key={image}/>
                 ))}
             </View>
