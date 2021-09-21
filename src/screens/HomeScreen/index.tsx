@@ -29,7 +29,7 @@ const HomeScreen = () => {
 
                         <View style={tw`flex flex-row mt-2 mb-4 items-center`}>
                             <Text style={tw`text-black text-lg`}>from </Text>
-                            <Text style={tw`text-black text-xl font-bold`}>$123 </Text>
+                            <Text style={tw`text-black text-xl font-bold`}>$123 <Text style={tw`text-xs font-normal flex line-through`}>$323</Text></Text>
                         </View>
                     </View>
                 </View>
