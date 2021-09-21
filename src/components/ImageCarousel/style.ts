@@ -8,7 +8,16 @@ const styles = StyleSheet.create({
     },
     root: {
 
-    }
+    },
+    dot: {
+        width: 10,
+        height: 10,
+        borderRadius: 10,
+        borderWidth: 1,
+        borderColor: '#c9c9c9',
+        margin: 5,
+        // backgroundColor: '#c9c9c9',
+    },
 });
 
 export default styles;
