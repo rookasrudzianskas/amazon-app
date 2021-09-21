@@ -5,11 +5,13 @@ import styles from './style';
 import tailwind from "tailwind-rn";
 import {FontAwesome} from "@expo/vector-icons";
 import ProductItem from "../../components/ProductItem";
+import products from "../../../assets/data/products";
 
 const HomeScreen = () => {
+
     return (
         <View style={tw`mt-12`}>
-            <ProductItem />
+            <ProductItem item={products[0]}/>
         </View>
     );
 };

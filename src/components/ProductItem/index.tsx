@@ -4,7 +4,19 @@ import tw from "tailwind-react-native-classnames";
 import styles from "../../screens/HomeScreen/style";
 import {FontAwesome} from "@expo/vector-icons";
 
-const ProductItem = () => {
+interface ProductItemProps {
+    item: {
+        id: string,
+        title: string,
+        image: string,
+        avgRating: number,
+        ratings: number,
+        price: number,
+        oldPrice: number,
+    }
+}
+
+const ProductItem = (props: ProductItemProps) => {
     return (
         <View>
             <View style={tw`m-3`}>
