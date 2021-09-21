@@ -9,8 +9,8 @@ interface ImageCarouselProps {
 
 const ImageCarousel = ({images}: ImageCarouselProps) => {
     return (
-        <View style={[styles.root, tw``]}>
-            <FlatList data={images} horizontal renderItem={({item}) => (
+        <View style={[styles.root, tw`mt-10 mb-10`]}>
+            <FlatList data={images} showsHorizontalScrollIndicator={false} horizontal renderItem={({item}) => (
                 <Image source={{uri: item}} style={styles.image} />
             )} />
         </View>

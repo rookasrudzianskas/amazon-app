@@ -4,7 +4,6 @@
     <list default="true" id="d7b8be3b-8a07-4423-b8da-1d51c1a0d238" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ImageCarousel/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ImageCarousel/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ImageCarousel/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ImageCarousel/style.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +45,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1632213472501</updated>
-      <workItem from="1632213476886" duration="15999000" />
+      <workItem from="1632213476886" duration="16097000" />
     </task>
     <servers />
   </component>
