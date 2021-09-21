@@ -1,12 +1,12 @@
 import React from 'react';
 import {View, Text, TextInput} from "react-native";
 import tw from "tailwind-react-native-classnames";
-import {Entypo, Feather, Ionicons} from "@expo/vector-icons";
+import {Entypo, EvilIcons, Feather, Ionicons} from "@expo/vector-icons";
 
 const ProductScreen = () => {
     return (
         <View style={tw`flex h-full`}>
-            <View style={tw`mb-36`}>
+            <View style={tw`mb-6`}>
                 <View style={tw`max-w-xl bg-green-400 p-2`}>
                     <View style={tw`mt-12 flex flex-row items-center shadow-xl`}>
                         <Entypo name="chevron-thin-left" size={24} color="#37475a" style={tw`mr-2`} />
@@ -21,6 +21,11 @@ const ProductScreen = () => {
                         </View>
                     </View>
                 </View>
+            </View>
+
+            <View style={tw`flex items-center flex-row justify-center px-5`}>
+                <Text style={tw`text-lg text-gray-500 flex flex-1`}>Title</Text>
+                <EvilIcons name="share-apple" size={24} color="black" />
             </View>
         </View>
     );
