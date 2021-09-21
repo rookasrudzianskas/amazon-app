@@ -18,11 +18,6 @@ interface ProductItemProps {
 
 const ProductItem = ({item}: ProductItemProps) => {
 
-    const rating = Math.floor(Math.random() * (5 + 10));
-    if(rating <= 0) {
-        return Math.floor(Math.random() * (5 + 2));
-    }
-
     function getRandomNumberBetween(min: number,max: number){
         return Math.floor(Math.random()*(max-min+1)+min);
     }
