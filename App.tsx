@@ -4,6 +4,7 @@ import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import tw from "tailwind-react-native-classnames";
 import tailwind from "tailwind-rn";
 import HomeScreen from "./src/screens/HomeScreen";
+import ProductScreen from "./src/ProductScreen";
 
 export default function App() {
   return (
@@ -11,7 +12,8 @@ export default function App() {
       <StatusBar style="auto" />
 
       <View style={tw`bg-gray-100`}>
-        <HomeScreen />
+        {/*<HomeScreen />*/}
+          <ProductScreen />
       </View>
     </View>
   );
