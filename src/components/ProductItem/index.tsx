@@ -18,6 +18,10 @@ interface ProductItemProps {
 
 const ProductItem = ({item}: ProductItemProps) => {
 
+    const rating = Math.floor(Math.random() * (5 + 10));
+    if(rating <= 0) {
+        return Math.floor(Math.random() * (5 + 2));
+    }
 
     return (
         <View>
@@ -33,11 +37,10 @@ const ProductItem = ({item}: ProductItemProps) => {
                             <Text numberOfLines={3}  style={[styles.textSize, tw`text-lg`]}>{item?.title || ''}</Text>
 
                             <View style={tw`flex items-center flex-row mt-3`}>
-                                <FontAwesome name="star" size={23} color="orange" />
-                                <FontAwesome name="star" size={23} color="orange" style={{marginLeft: 1}} />
-                                <FontAwesome name="star" size={23} color="orange" style={{marginLeft: 1}} />
-                                <FontAwesome name="star" size={23} color="orange" style={{marginLeft: 1}} />
-                                <FontAwesome name="star-half-empty" size={23} color="orange" style={{marginLeft: 1}} />
+
+                                {[0,0,0,0,0].map((index) => (
+                                    <FontAwesome key={index} name="star" size={23} color="orange" />
+                                ))}
                                 <Text style={tw`ml-2 text-gray-500`}>13.4532</Text>
                             </View>
 
