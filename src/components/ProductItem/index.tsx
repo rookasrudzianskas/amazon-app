@@ -23,6 +23,10 @@ const ProductItem = ({item}: ProductItemProps) => {
         return Math.floor(Math.random() * (5 + 2));
     }
 
+    function getRandomNumberBetween(min: number,max: number){
+        return Math.floor(Math.random()*(max-min+1)+min);
+    }
+
     return (
         <View>
             <View style={tw`m-3`}>
@@ -38,9 +42,11 @@ const ProductItem = ({item}: ProductItemProps) => {
 
                             <View style={tw`flex items-center flex-row mt-3`}>
 
-                                {[0,0,0,0,0].map((index) => (
-                                    <FontAwesome key={index} name="star" size={23} color="orange" />
-                                ))}
+    {/*// @ts-ignore*/}
+                                {Array(getRandomNumberBetween(1,6)).fill().map((_, i) => (
+                                    <FontAwesome key={i} name="star" size={23} color="orange" />
+                                    ))}
+
                                 <Text style={tw`ml-2 text-gray-500`}>13.4532</Text>
                             </View>
 
