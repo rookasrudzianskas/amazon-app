@@ -8,7 +8,7 @@ import {Picker} from '@react-native-picker/picker';
 
 const ProductScreen = () => {
 
-    const [selectedOption, setSelectedOption] = useState('');
+    const [selectedOption, setSelectedOption] = useState(product?.options[0] || '');
 
     return (
         <View style={tw`flex h-full`}>
