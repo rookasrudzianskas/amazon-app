@@ -5,6 +5,7 @@ import {Entypo, EvilIcons, Feather, Ionicons} from "@expo/vector-icons";
 import product from "../../assets/data/product";
 import {Picker} from '@react-native-picker/picker';
 import QuantitySelector from "../components/QuantitySelector";
+import Button from "../components/Button";
 
 
 const ProductScreen = () => {
@@ -106,18 +107,7 @@ const ProductScreen = () => {
                     <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
                 </View>
 
-
-                <TouchableOpacity activeOpacity={0.8}>
-                    <View style={tw`bg-yellow-400 flex items-center py-2 rounded-md shadow-md mt-6`}>
-                        <Text style={tw`text-xl`}>Add To Card</Text>
-                    </View>
-                </TouchableOpacity>
-
-                <TouchableOpacity activeOpacity={0.8}>
-                    <View style={tw`bg-yellow-500 flex items-center py-2 rounded-md shadow-md mt-4`}>
-                        <Text style={tw`text-xl`}>Add To Card</Text>
-                    </View>
-                </TouchableOpacity>
+                <Button />
 
             </View>
 
