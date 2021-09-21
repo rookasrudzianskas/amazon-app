@@ -33,25 +33,25 @@ const HomeScreen = () => {
             <View style={tw`flex flex-row mt-5`}>
                 <View style={tw`flex flex-row border-b-2 border-gray-300`}>
                     <TouchableOpacity activeOpacity={0.5}>
-                            <View style={tw`flex flex-row py-3 px-2 border-2 border-gray-200 rounded-md ml-3 mb-3`}>
+                            <View style={tw`flex flex-row py-3 px-2 border-2 border-gray-200 rounded-md ml-3 mb-3 bg-white`}>
                                 <Text style={tw``}>Delivery</Text>
                                 <Entypo name="chevron-down" size={16} color="black" />
                             </View>
                         </TouchableOpacity>
                     <TouchableOpacity activeOpacity={0.5}>
-                            <View style={tw`flex flex-row py-3 px-2 border-2 border-gray-200 rounded-md ml-1 mb-3`}>
+                            <View style={tw`flex flex-row py-3 px-2 border-2 border-gray-200 rounded-md ml-1 mb-3 bg-white`}>
                                 <Text style={tw``}>PC Gaming Keyboard</Text>
                                 <Entypo name="chevron-down" size={16} color="black" />
                             </View>
                         </TouchableOpacity>
                     <TouchableOpacity activeOpacity={0.5}>
-                            <View style={tw`flex flex-row py-3 px-2 border-2 border-gray-200 rounded-md ml-1 mb-3`}>
+                            <View style={tw`flex flex-row py-3 px-2 border-2 border-gray-200 rounded-md ml-1 mb-3 bg-white`}>
                                 <Text style={tw``}>Brand</Text>
                                 <Entypo name="chevron-down" size={16} color="black" />
                             </View>
                         </TouchableOpacity>
                     <TouchableOpacity activeOpacity={0.5}>
-                            <View style={tw`flex flex-row py-3 px-2 border-2 border-gray-200 rounded-md ml-1 mb-3`}>
+                            <View style={tw`flex flex-row py-3 px-2 border-2 border-gray-200 rounded-md ml-1 mb-3 bg-white`}>
                                 <Text style={tw``}>Review</Text>
                                 <Entypo name="chevron-down" size={16} color="black" />
                             </View>

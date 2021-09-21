@@ -10,7 +10,7 @@ export default function App() {
     <View style={styles.container}>
       <StatusBar style="auto" />
 
-      <View>
+      <View style={tw`bg-gray-100`}>
         <HomeScreen />
       </View>
     </View>
