@@ -106,14 +106,17 @@ const ProductScreen = () => {
                 <View style={tw`mt-6`}>
                     <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
                 </View>
-                {/*// @ts-ignore*/}
-                <Button color={'bg-yellow-400'} text={"Add To Card"} onPress={() => {
-                    console.warn("Hello");
-                }}/>
-                {/*// @ts-ignore*/}
-                <Button color={'bg-yellow-500'} text={"Buy Now"} onPress={() => {
-                    console.warn("Hello");
-                }}/>
+
+                <View style={tw`mb-24`}>
+                    {/*// @ts-ignore*/}
+                    <Button color={'bg-yellow-400'} text={"Add To Card"} onPress={() => {
+                        console.warn("Hello");
+                    }}/>
+                    {/*// @ts-ignore*/}
+                    <Button color={'bg-yellow-500'} text={"Buy Now"} onPress={() => {
+                        console.warn("Hello");
+                    }}/>
+                </View>
 
             </View>
 
