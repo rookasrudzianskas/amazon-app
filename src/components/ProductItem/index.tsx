@@ -47,9 +47,11 @@ const ProductItem = ({item}: ProductItemProps) => {
     {/*                                <FontAwesome key={i} name={i < Math.floor(item.avgRating) ? 'star' : 'star-o'} size={23} color="orange" />*/}
     {/*                                ))}*/}
 
+                                <Text>
                                     {[0, 0, 0, 0, 0].map((_, i) =>
-                                         <FontAwesome key={i} name={i < Math.floor(item.avgRating) ? 'star' : 'star-o'} size={23} color="orange" />
+                                         <FontAwesome key={i} name={i < Math.floor(item?.avgRating) ? 'star' : 'star-o'} size={23} color="orange" />
                                     )}
+                                </Text>
 
                                 <Text style={tw`ml-2 text-gray-500`}>13.4532</Text>
                             </View>
