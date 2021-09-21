@@ -8,7 +8,7 @@ import ProductItem from "../../components/ProductItem";
 
 const HomeScreen = () => {
     return (
-        <View style={tw``}>
+        <View style={tw`mt-12`}>
             <ProductItem />
         </View>
     );

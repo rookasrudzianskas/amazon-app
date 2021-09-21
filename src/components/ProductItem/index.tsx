@@ -10,7 +10,7 @@ const ProductItem = () => {
             <View style={tw`m-3`}>
                 {/*    product component */}
                 <View>
-                    <View style={tw`flex flex-row mt-12 px-2 border-2 border-gray-200 rounded-md items-center`}>
+                    <View style={tw`flex flex-row px-2 border-2 border-gray-200 rounded-md items-center`}>
                         <View style={tw``}>
                             <Image style={[styles.image, tw``]} source={{uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/products/mouse1.jpg'}} />
                         </View>
