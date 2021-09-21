@@ -25,7 +25,7 @@ const ProductItem = ({item}: ProductItemProps) => {
     return (
         <TouchableOpacity activeOpacity={0.8}>
             <View>
-                <View style={tw`m-2 bg-white`}>
+                <View style={tw`m-2 bg-white shadow-md`}>
                     {/*    product component */}
                     <View>
                         <View style={tw`flex flex-row px-2 border-2 border-gray-200 rounded-md items-center`}>
