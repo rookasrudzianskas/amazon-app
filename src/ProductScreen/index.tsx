@@ -2,11 +2,12 @@ import React from 'react';
 import {View, Text, TextInput} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import {Entypo, EvilIcons, Feather, Ionicons} from "@expo/vector-icons";
+import product from "../../assets/data/product";
 
 const ProductScreen = () => {
     return (
         <View style={tw`flex h-full`}>
-            <View style={tw`mb-6`}>
+            <View style={tw`mb-4`}>
                 <View style={tw`max-w-xl bg-green-400 p-2`}>
                     <View style={tw`mt-12 flex flex-row items-center shadow-xl`}>
                         <Entypo name="chevron-thin-left" size={24} color="#37475a" style={tw`mr-2`} />
@@ -23,9 +24,18 @@ const ProductScreen = () => {
                 </View>
             </View>
 
-            <View style={tw`flex items-center flex-row justify-center px-5`}>
-                <Text style={tw`text-lg text-gray-500 flex flex-1`}>Title</Text>
-                <EvilIcons name="share-apple" size={24} color="black" />
+            <View style={tw`px-5`}>
+                <View style={tw`flex items-center flex-row justify-center`}>
+                    <Text style={tw`text-lg text-gray-500 flex flex-1`}>{product?.title}</Text>
+                    <EvilIcons name="share-apple" size={24} color="black" />
+                </View>
+
+                <View style={tw`flex flex-row mt-2 mb-4 items-center`}>
+                    <Text style={tw`text-black text-lg`}>from </Text>
+                    <Text style={tw`text-black text-xl font-bold`}>${product?.price || '1.00'}
+                        {product.oldPrice && <Text style={tw`text-xs font-normal flex line-through`}>${product?.oldPrice}</Text>}
+                    </Text>
+                </View>
             </View>
         </View>
     );
