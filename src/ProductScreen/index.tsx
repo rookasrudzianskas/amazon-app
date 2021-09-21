@@ -46,6 +46,12 @@ const ProductScreen = () => {
                     </View>
                 </TouchableOpacity>
 
+                <Picker style={tw`-mt-20 -mb-10`}>
+                    {product.options.map(option => (
+                        <Picker.Item key={option} label={option} value={option} />
+                    ))}
+                </Picker>
+
                 <View style={tw`flex flex-row mt-2 mb-4 items-center`}>
                     <Text style={tw`text-black text-2xl font-bold `}>${product?.price || '1.00'}
                     </Text>
@@ -86,10 +92,6 @@ const ProductScreen = () => {
                     </View>
                 </TouchableOpacity>
 
-                <Picker>
-                    <Picker.Item label="Java" value="java" />
-                    <Picker.Item label="JavaScript" value="js" />
-                </Picker>
 
                 <TouchableOpacity activeOpacity={0.8}>
                     <View style={tw`bg-yellow-400 flex items-center py-2 rounded-md shadow-md mt-6`}>
