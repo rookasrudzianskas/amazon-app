@@ -3,6 +3,8 @@ import {View, Text, TextInput, TouchableOpacity, ScrollView} from "react-native"
 import tw from "tailwind-react-native-classnames";
 import {Entypo, EvilIcons, Feather, Ionicons} from "@expo/vector-icons";
 import product from "../../assets/data/product";
+import {Picker} from '@react-native-picker/picker';
+
 
 const ProductScreen = () => {
     return (
@@ -83,6 +85,11 @@ const ProductScreen = () => {
                         <Entypo name="chevron-down" size={16} color="black" />
                     </View>
                 </TouchableOpacity>
+
+                <Picker>
+                    <Picker.Item label="Java" value="java" />
+                    <Picker.Item label="JavaScript" value="js" />
+                </Picker>
 
                 <TouchableOpacity activeOpacity={0.8}>
                     <View style={tw`bg-yellow-400 flex items-center py-2 rounded-md shadow-md mt-6`}>
