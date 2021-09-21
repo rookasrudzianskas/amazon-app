@@ -49,6 +49,10 @@ const ProductScreen = () => {
                     {product.oldPrice && <Text style={tw` text-xl font-normal flex line-through ml-2`}>${product?.oldPrice}</Text>}
                 </View>
 
+                <View style={tw`mb-6`}>
+                    <Text style={tw``}>{product?.description}</Text>
+                </View>
+
                 <View style={tw``}>
                     <Text style={tw`text-gray-700`}>No import Fees Deposit & $9.99 shipping to the USA <Text style={tw`text-blue-500`}>Details</Text>
                     </Text>
