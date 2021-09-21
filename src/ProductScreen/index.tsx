@@ -4,11 +4,12 @@ import tw from "tailwind-react-native-classnames";
 import {Entypo, EvilIcons, Feather, Ionicons} from "@expo/vector-icons";
 import product from "../../assets/data/product";
 import {Picker} from '@react-native-picker/picker';
+import QuantitySelector from "../components/QuantitySelector";
 
 
 const ProductScreen = () => {
 
-    const [selectedOption, setSelectedOption] = useState(product?.options[0] || '');
+    const [selectedOption, setSelectedOption] = useState(product?.options ? product.options[0] : '');
 
     return (
         <View style={tw`flex h-full`}>
@@ -93,12 +94,16 @@ const ProductScreen = () => {
                     <Text style={tw`text-xl text-red-600 font-bold`}>Only 6 left in stock - order soon.</Text>
                 </View>
 
-                <TouchableOpacity activeOpacity={0.8}>
-                    <View style={tw`flex items-center flex-row bg-gray-300 w-20 px-4 py-2 rounded-md shadow-md mt-6`}>
-                        <Text style={tw`mr-1`}>Qty: 1</Text>
-                        <Entypo name="chevron-down" size={16} color="black" />
-                    </View>
-                </TouchableOpacity>
+                {/*<TouchableOpacity activeOpacity={0.8}>*/}
+                {/*    <View style={tw`flex items-center flex-row bg-gray-300 w-20 px-4 py-2 rounded-md shadow-md mt-6`}>*/}
+                {/*        <Text style={tw`mr-1`}>Qty: 1</Text>*/}
+                {/*        <Entypo name="chevron-down" size={16} color="black" />*/}
+                {/*    </View>*/}
+                {/*</TouchableOpacity>*/}
+
+                <View style={tw`mt-6`}>
+                    <QuantitySelector/>
+                </View>
 
 
                 <TouchableOpacity activeOpacity={0.8}>
