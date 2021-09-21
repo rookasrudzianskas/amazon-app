@@ -5,14 +5,15 @@ import tw from "tailwind-react-native-classnames";
 interface ButtonProps {
     text: string,
     onPress: () => {},
+    color: string,
 }
 
-const Button = ({text, onPress}: ButtonProps) => {
+const Button = ({text, onPress, color}: ButtonProps) => {
     return (
         <View>
-            <TouchableOpacity activeOpacity={0.8}>
-                <View style={tw`bg-yellow-400 flex items-center py-2 rounded-md shadow-md mt-6`}>
-                    <Text style={tw`text-xl`}>Add To Card</Text>
+            <TouchableOpacity activeOpacity={0.8} onPress={onPress}>
+                <View style={tw`${color} flex items-center py-2 rounded-md shadow-md mt-6`}>
+                    <Text style={tw`text-xl`}>{text || "untitled"}</Text>
                 </View>
             </TouchableOpacity>
 

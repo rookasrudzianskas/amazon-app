@@ -106,8 +106,14 @@ const ProductScreen = () => {
                 <View style={tw`mt-6`}>
                     <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
                 </View>
-
-                <Button />
+                {/*// @ts-ignore*/}
+                <Button color={'bg-yellow-400'} text={"Add To Card"} onPress={() => {
+                    console.warn("Hello");
+                }}/>
+                {/*// @ts-ignore*/}
+                <Button color={'bg-yellow-500'} text={"Buy Now"} onPress={() => {
+                    console.warn("Hello");
+                }}/>
 
             </View>
 
