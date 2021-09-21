@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text} from "react-native";
+import {View, Text, FlatList, Image} from "react-native";
 
 interface ImageCarouselProps {
     images: [];
@@ -8,7 +8,9 @@ interface ImageCarouselProps {
 const ImageCarousel = ({images}: ImageCarouselProps) => {
     return (
         <View>
-
+            <FlatList data={images} renderItem={({item}) => (
+                <Image source={{uri: item}} />
+            )} />
         </View>
     );
 };

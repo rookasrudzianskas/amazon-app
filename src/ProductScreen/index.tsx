@@ -6,6 +6,7 @@ import product from "../../assets/data/product";
 import {Picker} from '@react-native-picker/picker';
 import QuantitySelector from "../components/QuantitySelector";
 import Button from "../components/Button";
+import ImageCarousel from "../components/ImageCarousel";
 
 
 const ProductScreen = () => {
@@ -13,6 +14,7 @@ const ProductScreen = () => {
     const [selectedOption, setSelectedOption] = useState(product?.options ? product.options[0] : '');
     const [quantity, setQuantity] = useState(1);
 
+    // @ts-ignore
     return (
         <View style={tw`flex h-full`}>
             <View style={tw`mb-4`}>
@@ -37,6 +39,11 @@ const ProductScreen = () => {
                 <View style={tw`flex items-center flex-row justify-center`}>
                     <Text style={tw`text-lg text-gray-500 flex flex-1`}>{product?.title}</Text>
                     <EvilIcons name="share-apple" size={24} color="black" />
+                </View>
+
+                <View style={tw``}>
+                    {/*// @ts-ignore*/}
+                    <ImageCarousel images={product?.images} />
                 </View>
 
                 <TouchableOpacity activeOpacity={0.8}>
