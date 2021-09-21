@@ -4,7 +4,7 @@ import tw from "tailwind-react-native-classnames";
 
 interface ButtonProps {
     text: string,
-    onPress: () => {},
+    onPress: () => void,
     color: string,
     bgcolor: string,
 }
