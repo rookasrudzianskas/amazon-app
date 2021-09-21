@@ -3,6 +3,7 @@ import {View, Text, Image} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import styles from './style';
 import tailwind from "tailwind-rn";
+import {FontAwesome} from "@expo/vector-icons";
 
 const HomeScreen = () => {
     return (
@@ -17,11 +18,16 @@ const HomeScreen = () => {
                     <View style={tw`flex ml-5 mt-5`}>
                         <Text numberOfLines={3}  style={[styles.textSize, tw`text-lg`]}>Clean Architecture: A Craftsman's Guide to Software  Structure and Design</Text>
 
-                        <View style={tw``}>
-
+                        <View style={tw`flex items-center flex-row mt-3`}>
+                            <FontAwesome name="star" size={23} color="orange" />
+                            <FontAwesome name="star" size={23} color="orange" />
+                            <FontAwesome name="star" size={23} color="orange" />
+                            <FontAwesome name="star" size={23} color="orange" />
+                            <FontAwesome name="star-half-empty" size={23} color="orange" />
+                            <Text style={tw`ml-2 text-gray-500`}>13.4532</Text>
                         </View>
 
-                        <View style={tw`flex flex-row mt-2 mb-2 items-center`}>
+                        <View style={tw`flex flex-row mt-2 mb-4 items-center`}>
                             <Text style={tw`text-black text-lg`}>from </Text>
                             <Text style={tw`text-black text-xl font-bold`}>$123 </Text>
                         </View>
