@@ -12,7 +12,7 @@ interface ProductItemProps {
         avgRating: number,
         ratings: number,
         price: number,
-        oldPrice: number,
+        oldPrice?: number, // this property is optional
     }
 }
 
