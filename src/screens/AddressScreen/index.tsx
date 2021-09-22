@@ -12,6 +12,8 @@ const countries = countryList.getData();
 const AddressScreen = () => {
     // console.log(countryList.getCodeList());
     const [country, setCountry] = useState(countries[0].code);
+    const [fullname, setFullname] = useState('');
+    const [phone, setPhone] = useState('');
 
     return (
         <View style={tw``}>
@@ -40,16 +42,70 @@ const AddressScreen = () => {
                         </View>
 
                         <ScrollView>
+                            {/*------------- full name ------------------*/}
+
                             <View style={tw`mt-5`}>
                                 <Text style={tw`font-bold`}>Full name (First and Last name)</Text>
                                 <View style={tw`flex bg-white flex-row items-center  border-2  mt-3 border-gray-400 rounded-md `}>
                                     <View style={tw`flex items-center py-2 justify-center flex-1`}>
-                                        <TextInput placeholder={'Full name'} style={tw`ml-5 pb-2 w-full h-10 text-lg`} >
+                                        <TextInput value={fullname} onChangeText={setFullname} placeholder={'Full name'} style={tw`ml-5 pb-2 w-full h-10 text-lg`} >
                                         </TextInput>
                                     </View>
                                         <MaterialCommunityIcons style={tw`pt-0 mr-1`} name="cancel" size={24} color="gray" />
                                 </View>
                             </View>
+
+                            {/*-------------------------------*/}
+
+                            {/*------------- phone number ------------------*/}
+
+                            <View style={tw`mt-5`}>
+                                <Text style={tw`font-bold`}>Phone number</Text>
+                                <View style={tw`flex bg-white flex-row items-center  border-2  mt-3 border-gray-400 rounded-md `}>
+                                    <View style={tw`flex items-center py-2 justify-center flex-1`}>
+                                        <TextInput keyboardType={'phone-pad'} value={phone} onChangeText={setPhone} placeholder={'Phone number'} style={tw`ml-5 pb-2 w-full h-10 text-lg`} >
+                                        </TextInput>
+                                    </View>
+                                    <MaterialCommunityIcons style={tw`pt-0 mr-1`} name="cancel" size={24} color="gray" />
+                                </View>
+                            </View>
+
+                            {/*-------------------------------*/}
+
+                            {/*------------- address ------------------*/}
+
+                            <View style={tw`mt-5`}>
+                                <Text style={tw`font-bold`}>Address</Text>
+                                <View style={tw`flex bg-white flex-row items-center  border-2  mt-3 border-gray-400 rounded-md `}>
+                                    <View style={tw`flex items-center py-2 justify-center flex-1`}>
+                                        <TextInput value={phone} onChangeText={setPhone} placeholder={'Street address or P.O. Box'} style={tw`ml-5 pb-2 w-full h-10 text-lg`} >
+                                        </TextInput>
+                                    </View>
+                                </View>
+                                <View style={tw`flex bg-white flex-row items-center  border-2  mt-1 border-gray-400 rounded-md `}>
+                                    <View style={tw`flex items-center py-2 justify-center flex-1`}>
+                                        <TextInput value={phone} onChangeText={setPhone} placeholder={'Apt., Suite, Unit, Building, (optional)'} style={tw`ml-5 pb-2 w-full h-10 text-lg`} >
+                                        </TextInput>
+                                    </View>
+                                </View>
+                            </View>
+
+                            {/*-------------------------------*/}
+
+                            {/*------------- city ------------------*/}
+
+                            <View style={tw`mt-5`}>
+                                <Text style={tw`font-bold`}>City</Text>
+                                <View style={tw`flex bg-white flex-row items-center  border-2  mt-3 border-gray-400 rounded-md `}>
+                                    <View style={tw`flex items-center py-2 justify-center flex-1`}>
+                                        <TextInput value={phone} onChangeText={setPhone} placeholder={'City'} style={tw`ml-5 pb-2 w-full h-10 text-lg`} >
+                                        </TextInput>
+                                    </View>
+                                </View>
+                            </View>
+
+                            {/*-------------------------------*/}
+
                         </ScrollView>
 
                     </View>
