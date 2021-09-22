@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, Image} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import Button from "../Button";
@@ -25,7 +25,8 @@ interface CartProductItemProps {
 }
 
 const CartProductItem = ({cartItem}: CartProductItemProps) => {
-    const {item} = cartItem;
+    const {quantity: quantityProp, item} = cartItem;
+    const [quantity, setQuantity] = useState(quantityProp);
 
     return (
         <View>
