@@ -6,6 +6,7 @@ import products from "../../../assets/data/product";
 import Button from "../../components/Button";
 import styles from "../HomeScreen/style";
 import product from "../../../assets/data/product";
+import QuantitySelector from "../../components/QuantitySelector";
 
 const ShoppingCartScreen = () => {
     return (
@@ -55,8 +56,8 @@ const ShoppingCartScreen = () => {
                         <View>
                             <View style={tw`m-2 bg-white shadow-md`}>
                                 {/*    product component */}
-                                <View>
-                                    <View style={tw`flex flex-row px-2 border-2 border-gray-200 rounded-md items-center`}>
+                                <View style={tw` border-2 border-gray-200 rounded-md`}>
+                                    <View style={tw`flex flex-row px-2 items-center`}>
                                         <View style={tw``}>
                                             <Image style={[styles.image, tw``]} source={{uri: product?.image || ''}} />
                                         </View>
@@ -102,7 +103,38 @@ const ShoppingCartScreen = () => {
                                             </View>
 
 
+
+
                                         </View>
+                                    </View>
+
+                                    <View style={tw``}>
+                                        <View style={tw`mt-3 ml-20 flex flex-row items-center mb-3`}>
+                                            <View>
+                                                <QuantitySelector quantity={1} setQuantity={() => console.log("ROKAS")} />
+                                            </View>
+                                            <View style={tw`flex flex-row`}>
+                                                <TouchableOpacity activeOpacity={0.5}>
+                                                    <View style={tw`flex flex-row py-2 px-2 border-2 border-gray-200 rounded-md ml-3 bg-white shadow-md`}>
+                                                        <Text style={tw``}>Delete</Text>
+                                                    </View>
+                                                </TouchableOpacity>
+
+                                                <TouchableOpacity activeOpacity={0.5}>
+                                                    <View style={tw`flex flex-row py-2 px-2 border-2 border-gray-200 rounded-md ml-3 bg-white shadow-md`}>
+                                                        <Text style={tw``}>Save for Later</Text>
+                                                    </View>
+                                                </TouchableOpacity>
+
+                                            </View>
+
+
+                                        </View>
+
+                                        <View style={tw`mb-3`}>
+                                            <Text style={tw`text-lg text-blue-500 text-right mr-5`}>Compare with similar items</Text>
+                                        </View>
+
                                     </View>
                                 </View>
                             </View>
