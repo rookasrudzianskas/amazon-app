@@ -5,7 +5,7 @@ import {Entypo, Feather, FontAwesome, MaterialCommunityIcons} from "@expo/vector
 import products from "../../../assets/data/product";
 import Button from "../../components/Button";
 import styles from "../HomeScreen/style";
-import product from "../../../assets/data/product";
+import product from "../../../assets/data/cart";
 import QuantitySelector from "../../components/QuantitySelector";
 
 const ShoppingCartScreen = () => {
