@@ -16,7 +16,7 @@ const AddressScreen = () => {
     return (
         <View style={tw``}>
             <View style={tw`flex h-full`}>
-                <View style={tw`mb-4`}>
+                <View style={tw`mb-4 z-50`}>
                     <View style={tw`max-w-xl bg-green-400 p-2`}>
                         <View style={tw`mt-12 flex flex-row items-center shadow-xl`}>
                             <Entypo name="chevron-thin-left" size={24} color="#37475a" style={tw`mr-2`} />
@@ -25,7 +25,7 @@ const AddressScreen = () => {
                             </View>
                         </View>
                     </View>
-                    <View style={tw`bg-gray-100`}>
+                    <View style={tw`bg-gray-100 p-2`}>
                         <View style={tw`-mt-16`}>
                             <Picker
                                 selectedValue={country}
@@ -38,6 +38,12 @@ const AddressScreen = () => {
                                 <Picker.Item label="JavaScript" value="js" />
                             </Picker>
                         </View>
+
+                        <View style={tw`mt-5`}>
+                            <Text style={tw`font-bold`}>Full name (First and Last name)</Text>
+                            <TextInput style={tw``} />
+                        </View>
+
                     </View>
                 </View>
             </View>
