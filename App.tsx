@@ -6,6 +6,7 @@ import tailwind from "tailwind-rn";
 import HomeScreen from "./src/screens/HomeScreen";
 import ProductScreen from "./src/screens/ProductScreen";
 import ShoppingCartScreen from "./src/screens/ShoppingCartScreen";
+import AddressScreen from "./src/screens/AddressScreen";
 
 export default function App() {
   return (
@@ -15,7 +16,8 @@ export default function App() {
       <View style={tw`bg-gray-100`}>
         {/*<HomeScreen />*/}
         {/*  <ProductScreen />*/}
-        <ShoppingCartScreen />
+        {/*<ShoppingCartScreen />*/}
+          <AddressScreen />
       </View>
     </View>
   );
