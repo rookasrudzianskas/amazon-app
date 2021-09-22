@@ -12,8 +12,8 @@ export default function App() {
       <StatusBar style="auto" />
 
       <View style={tw`bg-gray-100`}>
-        {/*<HomeScreen />*/}
-          <ProductScreen />
+        <HomeScreen />
+        {/*  <ProductScreen />*/}
       </View>
     </View>
   );
