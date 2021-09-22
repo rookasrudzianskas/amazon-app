@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, TextInput, ScrollView, TouchableOpacity} from "react-native";
+import {View, Text, TextInput, ScrollView, TouchableOpacity, Alert} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import {Entypo, Feather, MaterialCommunityIcons} from "@expo/vector-icons";
 import styles from './style';
@@ -18,6 +18,16 @@ const AddressScreen = () => {
     const [address, setAddress] = useState('');
     const [address1, setAddress1] = useState('');
     const [city, setCity] = useState('');
+
+    const onCheckout = () => {
+        if(!fullname) {
+            Alert.alert('Your name is needeed, 🥰')
+        }
+
+        if(!phone) {
+            Alert.alert('Your phone is needeed, ☎️')
+        }
+    }
 
     return (
         <View style={tw``}>
@@ -146,17 +156,17 @@ const AddressScreen = () => {
                             </View>
 
                             <View style={tw`flex flex-row items-center bg-white py-2 rounded-md mt-3`}>
-                                <View style={tw``}>
+                                <View style={tw`flex flex-1`}>
                                     <Text style={tw`font-bold text-lg ml-2`}>Delivery Instructions(optional)</Text>
-                                    <Text style={tw`font-bold text-lg ml-2`}>Notes, preferences, access codes and more.</Text>
+                                    <Text style={tw`font-bold ml-2`}>Notes, preferences, access codes and more.</Text>
                                 </View>
                                 <View style={tw``}>
                                     <MaterialCommunityIcons name="chevron-right" size={24} color="gray" />
                                 </View>
                             </View>
 
-                            <View style={tw``}>
-                                <Button  bgcolor={'400'}  color={'bg-yellow-400'}  text={'Use this address'} onPress={() => console.log("rokas")}/>
+                            <View style={tw`mb-24`}>
+                                <Button  bgcolor={'400'}  color={'bg-yellow-400'}  text={'Use this address'} onPress={onCheckout}/>
                             </View>
 
                         </ScrollView>
