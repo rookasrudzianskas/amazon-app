@@ -7,7 +7,7 @@ import {Picker} from "@react-native-picker/picker";
 // @ts-ignore
 import countryList from "country-list";
 
-const countries = countryList.getCodeList();
+const countries = countryList.getData();
 
 const AddressScreen = () => {
     // console.log(countryList.getCodeList());
@@ -26,7 +26,10 @@ const AddressScreen = () => {
                     <View style={tw`bg-gray-100`}>
                         <View style={tw`-mt-16`}>
                             <Picker>
-                                <Picker.Item label="Java" value="java" />
+                                {countries.map((country: []) => (
+    // @ts-ignore
+                                    <Picker.Item label={country.name} value={country.code} key={country.name} />
+                                    ))}
                                 <Picker.Item label="JavaScript" value="js" />
                             </Picker>
                         </View>
