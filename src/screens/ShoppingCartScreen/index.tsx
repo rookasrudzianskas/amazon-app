@@ -58,6 +58,7 @@ const ShoppingCartScreen = () => {
 
                     renderItem={({item}) => (
                         <ShoppingCartItem key={item.id} item={item.item}/>
+                        // quantity selector
                     )}
                 />
 
