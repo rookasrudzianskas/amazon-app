@@ -57,7 +57,7 @@ const ShoppingCartScreen = () => {
                     data={products}
 
                     renderItem={({item}) => (
-                        <CartProductItem key={item.id} item={item.item}/>
+                        <CartProductItem key={item.id} cartItem={item}/>
                         // quantity selector
                     )}
                 />

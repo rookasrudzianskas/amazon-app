@@ -8,18 +8,25 @@ import product from "../../../assets/data/product";
 import QuantitySelector from "../QuantitySelector";
 
 interface CartProductItemProps {
-    item: {
+    cartItem: {
         id: string,
-        title: string,
-        image: string,
-        avgRating: number,
-        ratings: number,
-        price: number,
-        oldPrice?: number, // this property is optional
-    }
+        quantity: number,
+        option?: string,
+        item: {
+            id: string,
+            title: string,
+            image: string,
+            avgRating: number,
+            ratings: number,
+            price: number,
+            oldPrice?: number, // this property is optional
+        }
+    },
 }
 
-const CartProductItem = ({item}: CartProductItemProps) => {
+const CartProductItem = ({cartItem}: CartProductItemProps) => {
+    const {item} = cartItem;
+
     return (
         <View>
 
