@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, TextInput, ScrollView} from "react-native";
+import {View, Text, TextInput, ScrollView, TouchableOpacity} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import {Entypo, Feather, MaterialCommunityIcons} from "@expo/vector-icons";
 import styles from './style';
@@ -14,6 +14,9 @@ const AddressScreen = () => {
     const [country, setCountry] = useState(countries[0].code);
     const [fullname, setFullname] = useState('');
     const [phone, setPhone] = useState('');
+    const [address, setAddress] = useState('');
+    const [address1, setAddress1] = useState('');
+    const [city, setCity] = useState('');
 
     return (
         <View style={tw``}>
@@ -78,13 +81,13 @@ const AddressScreen = () => {
                                 <Text style={tw`font-bold`}>Address</Text>
                                 <View style={tw`flex bg-white flex-row items-center  border-2  mt-3 border-gray-400 rounded-md `}>
                                     <View style={tw`flex items-center py-2 justify-center flex-1`}>
-                                        <TextInput value={phone} onChangeText={setPhone} placeholder={'Street address or P.O. Box'} style={tw`ml-5 pb-2 w-full h-10 text-lg`} >
+                                        <TextInput value={address} onChangeText={setAddress} placeholder={'Street address or P.O. Box'} style={tw`ml-5 pb-2 w-full h-10 text-lg`} >
                                         </TextInput>
                                     </View>
                                 </View>
                                 <View style={tw`flex bg-white flex-row items-center  border-2  mt-1 border-gray-400 rounded-md `}>
                                     <View style={tw`flex items-center py-2 justify-center flex-1`}>
-                                        <TextInput value={phone} onChangeText={setPhone} placeholder={'Apt., Suite, Unit, Building, (optional)'} style={tw`ml-5 pb-2 w-full h-10 text-lg`} >
+                                        <TextInput value={address1} onChangeText={setAddress1} placeholder={'Apt., Suite, Unit, Building, (optional)'} style={tw`ml-5 pb-2 w-full h-10 text-lg`} >
                                         </TextInput>
                                     </View>
                                 </View>
@@ -98,8 +101,38 @@ const AddressScreen = () => {
                                 <Text style={tw`font-bold`}>City</Text>
                                 <View style={tw`flex bg-white flex-row items-center  border-2  mt-3 border-gray-400 rounded-md `}>
                                     <View style={tw`flex items-center py-2 justify-center flex-1`}>
-                                        <TextInput value={phone} onChangeText={setPhone} placeholder={'City'} style={tw`ml-5 pb-2 w-full h-10 text-lg`} >
+                                        <TextInput value={city} onChangeText={setCity} placeholder={'City'} style={tw`ml-5 pb-2 w-full h-10 text-lg`} >
                                         </TextInput>
+                                    </View>
+                                </View>
+                            </View>
+
+                            {/*-------------------------------*/}
+
+                            {/*------------- state ------------------*/}
+
+                            <View style={tw`mt-5`}>
+                                <View style={tw`flex flex-row`}>
+                                        <Text style={tw`font-bold flex flex-1`}>State</Text>
+                                    <Text style={[{marginRight: 175}, tw` font-bold`]}>City</Text>
+                                </View>
+                                <View style={tw`flex flex-row mt-2 items-center`}>
+                                    <View style={tw`flex flex-1 mr-1`}>
+                                        <TouchableOpacity activeOpacity={0.5}>
+                                            <View style={tw`flex flex-row py-3 px-2 border-2 border-gray-200 rounded-md mb-3 bg-white shadow-md`}>
+                                                <Text style={tw`ml-2 flex flex-1`}>Delivery</Text>
+                                                <Entypo name="chevron-down" size={16} color="black" />
+                                            </View>
+                                        </TouchableOpacity>
+                                    </View>
+
+                                    <View style={tw`flex flex-1 ml-1`}>
+                                        <View style={tw`flex bg-white flex-row items-center  border-2 border-gray-400 rounded-md mb-2 `}>
+                                            <View style={tw`flex items-center mb-1 justify-center flex-1`}>
+                                                <TextInput value={city} onChangeText={setCity} placeholder={'City'} style={tw`ml-5 pb-2 w-full h-10 text-lg`} >
+                                                </TextInput>
+                                            </View>
+                                        </View>
                                     </View>
                                 </View>
                             </View>
