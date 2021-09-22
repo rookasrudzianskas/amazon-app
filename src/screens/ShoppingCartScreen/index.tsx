@@ -8,6 +8,8 @@ import CartProductItem from "../../components/CartProductItem";
 import Button from "../../components/Button";
 
 const ShoppingCartScreen = () => {
+
+    const totalPrice =
     // @ts-ignore
     return (
         <View>
@@ -32,7 +34,7 @@ const ShoppingCartScreen = () => {
 
                 <View style={tw`px-2`}>
                     <View style={tw`flex flex-row`}>
-                        <Text style={tw`font-bold`}>Subtotal (2 items): </Text>
+                        <Text style={tw`font-bold`}>Subtotal ({products?.length} items): </Text>
                         <Text style={tw`font-bold text-red-600`}>$2323.5435</Text>
                     </View>
 
