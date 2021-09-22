@@ -27,7 +27,10 @@ const AddressScreen = () => {
                     </View>
                     <View style={tw`bg-gray-100`}>
                         <View style={tw`-mt-16`}>
-                            <Picker>
+                            <Picker
+                                selectedValue={country}
+                                onValueChange={setCountry}
+                            >
                                 {countries.map((country: []) => (
     // @ts-ignore
                                     <Picker.Item label={country.name} value={country.code} key={country.name} />
