@@ -6,6 +6,7 @@ import styles from './style';
 import {Picker} from "@react-native-picker/picker";
 // @ts-ignore
 import countryList from "country-list";
+import Button from '../../components/Button';
 
 const countries = countryList.getData();
 
@@ -152,6 +153,10 @@ const AddressScreen = () => {
                                 <View style={tw``}>
                                     <MaterialCommunityIcons name="chevron-right" size={24} color="gray" />
                                 </View>
+                            </View>
+
+                            <View style={tw``}>
+                                <Button  bgcolor={'400'}  color={'bg-yellow-400'}  text={'Use this address'} onPress={() => console.log("rokas")}/>
                             </View>
 
                         </ScrollView>
