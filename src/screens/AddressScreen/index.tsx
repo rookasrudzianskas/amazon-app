@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, TextInput} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import {Entypo, Feather} from "@expo/vector-icons";
@@ -11,6 +11,8 @@ const countries = countryList.getData();
 
 const AddressScreen = () => {
     // console.log(countryList.getCodeList());
+    const [country, setCountry] = useState(countries[0].code);
+
     return (
         <View style={tw``}>
             <View style={tw`flex h-full`}>
