@@ -32,7 +32,7 @@ const ShoppingCartItem = ({item}: ShoppingCartItem) => {
                             <View style={tw` border-2 border-gray-200 rounded-md`}>
                                 <View style={tw`flex flex-row px-2 items-center`}>
                                     <View style={tw``}>
-                                        <Image style={[styles.image, tw``]} source={{uri: item?.item?.image || ''}} />
+                                        <Image style={[styles.image, tw``]} source={{uri: item?.image || ''}} />
                                     </View>
 
                                     <View style={tw`flex ml-5 mt-5`}>
