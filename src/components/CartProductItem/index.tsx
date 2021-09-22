@@ -7,7 +7,7 @@ import styles from "../../screens/HomeScreen/style";
 import product from "../../../assets/data/product";
 import QuantitySelector from "../QuantitySelector";
 
-interface ShoppingCartItem {
+interface CartProductItemProps {
     item: {
         id: string,
         title: string,
@@ -19,7 +19,7 @@ interface ShoppingCartItem {
     }
 }
 
-const ShoppingCartItem = ({item}: ShoppingCartItem) => {
+const CartProductItem = ({item}: CartProductItemProps) => {
     return (
         <View>
 
@@ -120,4 +120,4 @@ const ShoppingCartItem = ({item}: ShoppingCartItem) => {
     );
 };
 
-export default ShoppingCartItem;
+export default CartProductItem;

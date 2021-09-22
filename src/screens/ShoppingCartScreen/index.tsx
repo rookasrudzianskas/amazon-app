@@ -4,7 +4,7 @@ import tw from "tailwind-react-native-classnames";
 import {Entypo, Feather, FontAwesome, MaterialCommunityIcons} from "@expo/vector-icons";
 import products from "../../../assets/data/cart";
 
-import ShoppingCartItem from "../../components/ShoppingCardItem";
+import CartProductItem from "../../components/CartProductItem";
 import Button from "../../components/Button";
 
 const ShoppingCartScreen = () => {
@@ -57,7 +57,7 @@ const ShoppingCartScreen = () => {
                     data={products}
 
                     renderItem={({item}) => (
-                        <ShoppingCartItem key={item.id} item={item.item}/>
+                        <CartProductItem key={item.id} item={item.item}/>
                         // quantity selector
                     )}
                 />
