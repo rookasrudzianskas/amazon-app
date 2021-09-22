@@ -4,8 +4,13 @@ import tw from "tailwind-react-native-classnames";
 import {Entypo, Feather} from "@expo/vector-icons";
 import styles from './style';
 import {Picker} from "@react-native-picker/picker";
+// @ts-ignore
+import countryList from "country-list";
+
+const countries = countryList.getCodeList();
 
 const AddressScreen = () => {
+    // console.log(countryList.getCodeList());
     return (
         <View style={tw``}>
             <View style={tw`flex h-full`}>
