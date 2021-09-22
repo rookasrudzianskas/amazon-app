@@ -2,6 +2,8 @@ import React from 'react';
 import {View, Text, TextInput} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import {Entypo, Feather} from "@expo/vector-icons";
+import styles from './style';
+import {Picker} from "@react-native-picker/picker";
 
 const AddressScreen = () => {
     return (
@@ -16,8 +18,17 @@ const AddressScreen = () => {
                             </View>
                         </View>
                     </View>
+                    <View style={tw`bg-gray-100`}>
+                        <View style={tw`mt-10`}>
+                            <Picker>
+                                <Picker.Item label="Java" value="java" />
+                                <Picker.Item label="JavaScript" value="js" />
+                            </Picker>
+                        </View>
+                    </View>
                 </View>
             </View>
+
 
 
             {/*<View style={tw`bg-gray-100 px-3 py-3 rounded-md`}>*/}
