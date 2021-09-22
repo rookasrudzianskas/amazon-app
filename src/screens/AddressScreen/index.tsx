@@ -139,6 +139,11 @@ const AddressScreen = () => {
 
                             {/*-------------------------------*/}
 
+                            <View style={tw`flex flex-row items-center`}>
+                                <MaterialCommunityIcons name="checkbox-blank-outline" size={24} color="gray" />
+                                <Text style={tw`ml-2`}>Make this my default address</Text>
+                            </View>
+
                         </ScrollView>
 
                     </View>
