@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import {View, Text, TextInput} from "react-native";
+import {View, Text, TextInput, ScrollView} from "react-native";
 import tw from "tailwind-react-native-classnames";
-import {Entypo, Feather} from "@expo/vector-icons";
+import {Entypo, Feather, MaterialCommunityIcons} from "@expo/vector-icons";
 import styles from './style';
 import {Picker} from "@react-native-picker/picker";
 // @ts-ignore
@@ -39,10 +39,18 @@ const AddressScreen = () => {
                             </Picker>
                         </View>
 
-                        <View style={tw`mt-5`}>
-                            <Text style={tw`font-bold`}>Full name (First and Last name)</Text>
-                            <TextInput style={tw``} />
-                        </View>
+                        <ScrollView>
+                            <View style={tw`mt-5`}>
+                                <Text style={tw`font-bold`}>Full name (First and Last name)</Text>
+                                <View style={tw`flex bg-white flex-row items-center  border-2  mt-3 border-gray-400 rounded-md `}>
+                                    <View style={tw`flex items-center py-2 justify-center flex-1`}>
+                                        <TextInput placeholder={'Full name'} style={tw`ml-5 pb-2 w-full h-10 text-lg`} >
+                                        </TextInput>
+                                    </View>
+                                        <MaterialCommunityIcons style={tw`pt-0 mr-1`} name="cancel" size={24} color="gray" />
+                                </View>
+                            </View>
+                        </ScrollView>
 
                     </View>
                 </View>
