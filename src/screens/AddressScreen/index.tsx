@@ -144,6 +144,16 @@ const AddressScreen = () => {
                                 <Text style={tw`ml-2`}>Make this my default address</Text>
                             </View>
 
+                            <View style={tw`flex flex-row items-center bg-white py-2 rounded-md mt-3`}>
+                                <View style={tw``}>
+                                    <Text style={tw`font-bold text-lg ml-2`}>Delivery Instructions(optional)</Text>
+                                    <Text style={tw`font-bold text-lg ml-2`}>Notes, preferences, access codes and more.</Text>
+                                </View>
+                                <View style={tw``}>
+                                    <MaterialCommunityIcons name="chevron-right" size={24} color="gray" />
+                                </View>
+                            </View>
+
                         </ScrollView>
 
                     </View>
