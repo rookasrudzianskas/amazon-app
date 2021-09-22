@@ -19,7 +19,7 @@ const AddressScreen = () => {
                         </View>
                     </View>
                     <View style={tw`bg-gray-100`}>
-                        <View style={tw`mt-10`}>
+                        <View style={tw`-mt-16`}>
                             <Picker>
                                 <Picker.Item label="Java" value="java" />
                                 <Picker.Item label="JavaScript" value="js" />
