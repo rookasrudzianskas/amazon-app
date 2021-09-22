@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d7b8be3b-8a07-4423-b8da-1d51c1a0d238" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProductScreen/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/ProductScreen/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ImageCarousel/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ImageCarousel/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +38,22 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/screens" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -46,7 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1632213472501</updated>
       <workItem from="1632213476886" duration="17788000" />
-      <workItem from="1632314834585" duration="211000" />
+      <workItem from="1632314834585" duration="1562000" />
     </task>
     <servers />
   </component>

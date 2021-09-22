@@ -23,8 +23,16 @@ const ImageCarousel = ({images}: ImageCarouselProps) => {
             <FlatList  viewabilityConfig={{
                 viewAreaCoveragePercentThreshold: 50,
             }}
-                       onViewableItemsChanged={onFlatlistUpdate} keyExtractor={(item, index) => index.toString()} snapToInterval={Dimensions.get('window').width} snapToAlignment={'center'} decelerationRate={'fast'}  data={images} showsHorizontalScrollIndicator={false} horizontal renderItem={({item}) => (
-                <Image source={{uri: item}} style={styles.image} />
+                       onViewableItemsChanged={onFlatlistUpdate}
+                       keyExtractor={(item, index) => index.toString()}
+                       snapToInterval={Dimensions.get('window').width}
+                       snapToAlignment={'center'}
+                       decelerationRate={'fast'}
+                       data={images}
+                       showsHorizontalScrollIndicator={false}
+                       horizontal
+                       renderItem={({item}) => (
+                <Image source={{uri: item}} key={item} style={styles.image} />
             )}
             />
 

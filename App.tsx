@@ -4,7 +4,7 @@ import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import tw from "tailwind-react-native-classnames";
 import tailwind from "tailwind-rn";
 import HomeScreen from "./src/screens/HomeScreen";
-import ProductScreen from "./src/ProductScreen";
+import ProductScreen from "./src/screens/ProductScreen";
 
 export default function App() {
   return (

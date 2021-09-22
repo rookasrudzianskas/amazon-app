@@ -2,11 +2,11 @@ import React, {useState} from 'react';
 import {View, Text, TextInput, TouchableOpacity, ScrollView} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import {Entypo, EvilIcons, Feather, Ionicons} from "@expo/vector-icons";
-import product from "../../assets/data/product";
+import product from "../../../assets/data/product";
 import {Picker} from '@react-native-picker/picker';
-import QuantitySelector from "../components/QuantitySelector";
-import Button from "../components/Button";
-import ImageCarousel from "../components/ImageCarousel";
+import QuantitySelector from "../../components/QuantitySelector";
+import Button from "../../components/Button";
+import ImageCarousel from "../../components/ImageCarousel";
 
 
 const ProductScreen = () => {
