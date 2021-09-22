@@ -92,7 +92,7 @@ const CartProductItem = ({cartItem}: CartProductItemProps) => {
                                 <View style={tw``}>
                                     <View style={tw`mt-3 ml-20 flex flex-row items-center mb-3`}>
                                         <View>
-                                            <QuantitySelector quantity={1} setQuantity={() => console.log("ROKAS")} />
+                                            <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
                                         </View>
                                         <View style={tw`flex flex-row`}>
                                             <TouchableOpacity activeOpacity={0.5}>
