@@ -23,27 +23,6 @@ const ShoppingCartItem = ({item}: ShoppingCartItem) => {
     return (
         <View>
 
-            <View style={tw`px-2`}>
-                <View style={tw`flex flex-row`}>
-                    <Text style={tw`font-bold`}>Subtotal (2 items): </Text>
-                    <Text style={tw`font-bold text-red-600`}>$2323.5435</Text>
-                </View>
-
-                <View style={tw``}>
-                    <Button  bgcolor={'400'}  color={'bg-yellow-400'} text={'Proceed to checkout'} onPress={() => console.log("ROkas")}/>
-                </View>
-
-                <View style={tw`flex flex-row items-center mt-6 border-b-2 border-gray-300`}>
-                    <View style={tw`mb-3 flex flex-row items-center`}>
-                        <TouchableOpacity activeOpacity={0.8}>
-                            <MaterialCommunityIcons style={tw`mr-3`} name="checkbox-blank-outline" size={24} color="gray" />
-                        </TouchableOpacity>
-                        <MaterialCommunityIcons name="gift-outline" size={24} color="gray" />
-                        <Text style={tw`ml-2 text-black `}>Add a gift receipt for easy returns</Text>
-                    </View>
-                </View>
-            </View>
-
             <View>
                 {/*    the product shit */}
                 <TouchableOpacity activeOpacity={0.8}>
@@ -53,11 +32,11 @@ const ShoppingCartItem = ({item}: ShoppingCartItem) => {
                             <View style={tw` border-2 border-gray-200 rounded-md`}>
                                 <View style={tw`flex flex-row px-2 items-center`}>
                                     <View style={tw``}>
-                                        <Image style={[styles.image, tw``]} source={{uri: product?.image || ''}} />
+                                        <Image style={[styles.image, tw``]} source={{uri: item?.item?.image || ''}} />
                                     </View>
 
                                     <View style={tw`flex ml-5 mt-5`}>
-                                        <Text numberOfLines={3}  style={[styles.textSize, tw`text-lg`]}>{product?.title || ''}</Text>
+                                        <Text numberOfLines={3}  style={[styles.textSize, tw`text-lg`]}>{item?.title || ''}</Text>
 
                                         <View style={tw`flex flex-row items-center mt-2`}>
                                             <Text style={tw`pl-1 bg-yellow-500 py-2 w-28 px-1 rounded-md text-white font-bold`}>#1 Best Seller</Text>
@@ -67,9 +46,9 @@ const ShoppingCartItem = ({item}: ShoppingCartItem) => {
                                         <View>
                                             <View style={tw`flex flex-row mt-2 mb-4 items-center`}>
                                                 <Text style={tw`text-black text-lg`}>from </Text>
-                                                <Text style={tw`text-red-600 text-xl font-bold`}>${product?.price || '1.00'}
+                                                <Text style={tw`text-red-600 text-xl font-bold`}>${item?.price || '1.00'}
                                                 </Text>
-                                                {product.oldPrice && <Text style={tw`text-xs font-normal flex line-through`}> ${product?.oldPrice}</Text>}
+                                                {item.oldPrice && <Text style={tw`text-xs font-normal flex line-through`}> ${item?.oldPrice}</Text>}
                                             </View>
 
                                             <View style={tw``}>
@@ -89,7 +68,7 @@ const ShoppingCartItem = ({item}: ShoppingCartItem) => {
 
                                             <Text>
                                                 {[0, 0, 0, 0, 0].map((_, i) =>
-                                                    <FontAwesome key={i} name={i < Math.floor(product?.avgRating) ? 'star' : 'star-o'} size={23} color="orange" />
+                                                    <FontAwesome key={i} name={i < Math.floor(item?.avgRating) ? 'star' : 'star-o'} size={23} color="orange" />
                                                 )}
                                             </Text>
 

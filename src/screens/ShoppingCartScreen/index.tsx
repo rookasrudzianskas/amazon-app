@@ -5,6 +5,7 @@ import {Entypo, Feather, FontAwesome, MaterialCommunityIcons} from "@expo/vector
 import products from "../../../assets/data/cart";
 
 import ShoppingCartItem from "../../components/ShoppingCardItem";
+import Button from "../../components/Button";
 
 const ShoppingCartScreen = () => {
     // @ts-ignore
@@ -28,13 +29,35 @@ const ShoppingCartScreen = () => {
                     </View>
                 </View>
 
+
+                <View style={tw`px-2`}>
+                    <View style={tw`flex flex-row`}>
+                        <Text style={tw`font-bold`}>Subtotal (2 items): </Text>
+                        <Text style={tw`font-bold text-red-600`}>$2323.5435</Text>
+                    </View>
+
+                    <View style={tw``}>
+                        <Button  bgcolor={'400'}  color={'bg-yellow-400'} text={'Proceed to checkout'} onPress={() => console.log("ROkas")}/>
+                    </View>
+
+                    <View style={tw`flex flex-row items-center mt-6 border-b-2 border-gray-300`}>
+                        <View style={tw`mb-3 flex flex-row items-center`}>
+                            <TouchableOpacity activeOpacity={0.8}>
+                                <MaterialCommunityIcons style={tw`mr-3`} name="checkbox-blank-outline" size={24} color="gray" />
+                            </TouchableOpacity>
+                            <MaterialCommunityIcons name="gift-outline" size={24} color="gray" />
+                            <Text style={tw`ml-2 text-black `}>Add a gift receipt for easy returns</Text>
+                        </View>
+                    </View>
+                </View>
+
+
                 <FlatList
                     showsVerticalScrollIndicator={false}
                     data={products}
-                    style={{marginBottom: 4250000000,}}
 
                     renderItem={({item}) => (
-                        <ShoppingCartItem/>
+                        <ShoppingCartItem key={item.id} item={item}/>
                     )}
                 />
 
