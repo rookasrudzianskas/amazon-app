@@ -5,6 +5,7 @@ import tw from "tailwind-react-native-classnames";
 import tailwind from "tailwind-rn";
 import HomeScreen from "./src/screens/HomeScreen";
 import ProductScreen from "./src/screens/ProductScreen";
+import ShoppingCartScreen from "./src/screens/ShoppingCartScreen";
 
 export default function App() {
   return (
@@ -12,8 +13,9 @@ export default function App() {
       <StatusBar style="auto" />
 
       <View style={tw`bg-gray-100`}>
-        <HomeScreen />
+        {/*<HomeScreen />*/}
         {/*  <ProductScreen />*/}
+        <ShoppingCartScreen />
       </View>
     </View>
   );
