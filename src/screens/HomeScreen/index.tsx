@@ -19,7 +19,7 @@ const HomeScreen = () => {
     }
 
     const [products, setProducts] = useState<Product[]>([]);
-        console.log(products)
+        // console.log(products)
 
     useEffect(() => {
         const fetchSomething = async () => {
