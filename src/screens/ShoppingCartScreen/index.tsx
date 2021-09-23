@@ -68,7 +68,7 @@ const ShoppingCartScreen = () => {
                 <View style={tw`px-2`}>
                     <View style={tw`flex flex-row`}>
                         <Text style={tw`font-bold`}>Subtotal ({cartProducts?.length} items): </Text>
-                        <Text style={tw`font-bold text-red-600`}>${totalPrice.toFixed(2)}</Text>
+                        <Text style={tw`font-bold text-red-600`}>${totalPrice?.toFixed(2)}</Text>
                     </View>
 
                     <View style={tw``}>
