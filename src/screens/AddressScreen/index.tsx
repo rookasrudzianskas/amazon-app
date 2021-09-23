@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, TextInput, ScrollView, TouchableOpacity, Alert, KeyboardAvoidingView} from "react-native";
+import {View, Text, TextInput, ScrollView, TouchableOpacity, Alert, KeyboardAvoidingView, Platform} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import {Entypo, Feather, MaterialCommunityIcons} from "@expo/vector-icons";
 import styles from './style';
@@ -55,7 +55,7 @@ const AddressScreen = () => {
                         </View>
                     </View>
                     <View style={tw`bg-gray-100 p-2`}>
-                        <KeyboardAvoidingView  style={{display: 'flex',}} behavior="padding" enabled   keyboardVerticalOffset={100}>
+                        <KeyboardAvoidingView  style={{display: 'flex',}} behavior={Platform.OS === 'ios' ? 'padding' : 'height'} enabled keyboardVerticalOffset={100}>
                             <ScrollView   showsVerticalScrollIndicator={false}>
 
                                 <View style={tw`-mt-16`}>
