@@ -30,6 +30,12 @@ const AddressScreen = () => {
         }
     }
 
+    const validateAddress = () => {
+        if(address.length < 3) {
+            setAddressError('Address must be at least 3 characters');
+        }
+    }
+
     return (
         <View style={tw``}>
             <View style={tw`flex h-full`}>
@@ -95,7 +101,10 @@ const AddressScreen = () => {
                                             <Text style={tw`font-bold`}>Address</Text>
                                             <View style={tw`flex bg-white flex-row items-center  border-2  mt-3 border-gray-400 rounded-md `}>
                                                 <View style={tw`flex items-center py-2 justify-center flex-1`}>
-                                                    <TextInput value={address} onChangeText={(text) => {
+                                                    <TextInput
+                                                        value={address}
+                                                        onEndEditing={validateAddress}
+                                                        onChangeText={(text) => {
                                                         setAddress(text);
                                                         setAddressError('');
                                                     }}
