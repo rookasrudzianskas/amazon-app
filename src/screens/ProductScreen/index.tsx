@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, TextInput, TouchableOpacity, ScrollView, ActivityIndicator} from "react-native";
+import {View, Text, TextInput, TouchableOpacity, ScrollView, ActivityIndicator, Alert} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import {Entypo, EvilIcons, Feather, Ionicons} from "@expo/vector-icons";
 // import product from "../../../assets/data/product";
@@ -66,6 +66,7 @@ const ProductScreen = () => {
         });
 
         await DataStore.save(newCartProduct);
+        Alert.alert("The order was submitted successfully");
         // @ts-ignore
         navigation.navigate('HomeScreen');
     }
