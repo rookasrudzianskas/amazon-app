@@ -3,9 +3,22 @@ type Product @model {
   title: String!
   description: String!
   image: String!
+  images: [String!]!
+  options: [String!]
+  avgRating: Float
+  ratings: Integer
 
+  price: Float!
+  oldPrice: Float
 }
 
+type CartProduct @model {
+  id: ID!
+  quantity: Integer!
+  options: String
+
+
+}
 
 
 
