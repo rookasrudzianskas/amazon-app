@@ -5,6 +5,7 @@ import HomeScreen from "../screens/HomeScreen";
 import {View, Text} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
+import BottomTabNavigator from "./bottomTabNavigator";
 
 const Router = () => {
 
@@ -25,7 +26,7 @@ const Router = () => {
             <Root.Navigator initialRouteName="Home"  screenOptions={{
                 headerShown: false
             }}>
-                <Root.Screen name="Home" component={HomeScreen} />
+                <Root.Screen name="HomeTabs" component={BottomTabNavigator} />
             </Root.Navigator>
         </NavigationContainer>
     );
