@@ -6,6 +6,7 @@ import {FontAwesome, MaterialCommunityIcons} from "@expo/vector-icons";
 import styles from "../../screens/HomeScreen/style";
 import product from "../../../assets/data/product";
 import QuantitySelector from "../QuantitySelector";
+import {useNavigation} from "@react-navigation/native";
 
 interface CartProductItemProps {
     cartItem: {
@@ -28,12 +29,18 @@ const CartProductItem = ({cartItem}: CartProductItemProps) => {
     const {quantity: quantityProp, item} = cartItem;
     const [quantity, setQuantity] = useState(quantityProp);
 
+    const navigation = useNavigation();
+    const onGoTo = () => {
+        // @ts-ignore
+        navigation.navigate('productScreen');
+    }
+
     return (
         <View>
 
             <View>
                 {/*    the product shit */}
-                <TouchableOpacity activeOpacity={0.8}>
+                <TouchableOpacity onPress={onGoTo} activeOpacity={0.8}>
                     <View>
                         <View style={tw`m-2 bg-white shadow-md`}>
                             {/*    product component */}

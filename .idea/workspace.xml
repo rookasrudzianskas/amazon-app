@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d7b8be3b-8a07-4423-b8da-1d51c1a0d238" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/AddressScreen/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/AddressScreen/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/HomeScreen/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/HomeScreen/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/ProductScreen/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/ProductScreen/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/ShoppingCartScreen/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/ShoppingCartScreen/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CartProductItem/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CartProductItem/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/ShoppingCartStack.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/ShoppingCartStack.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1632213472501</updated>
       <workItem from="1632213476886" duration="17788000" />
-      <workItem from="1632314834585" duration="20590000" />
+      <workItem from="1632314834585" duration="20747000" />
     </task>
     <servers />
   </component>

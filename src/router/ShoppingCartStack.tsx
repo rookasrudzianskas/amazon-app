@@ -30,6 +30,7 @@ const ShoppingCartStack = () => {
             }}>
                 <Stack.Screen name="cart" component={ShoppingCartScreen} />
                 <Stack.Screen name="addressScreen" component={AddressScreen} />
+                <Stack.Screen name="productScreen" component={ProductScreen} />
             </Stack.Navigator>
     );
 };
