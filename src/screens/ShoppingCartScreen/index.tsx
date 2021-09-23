@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, Text, TextInput, ScrollView, TouchableOpacity, Image, FlatList} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import {Entypo, Feather, FontAwesome, MaterialCommunityIcons} from "@expo/vector-icons";
@@ -7,8 +7,11 @@ import products from "../../../assets/data/cart";
 import CartProductItem from "../../components/CartProductItem";
 import Button from "../../components/Button";
 import {useNavigation} from "@react-navigation/native";
+import {CartProduct} from "../../models";
 
 const ShoppingCartScreen = () => {
+
+    const [products, setProducts] = useState<CartProduct[]>([]);
 
     const totalPrice = products.reduce((summedPrice, product) => (
         summedPrice + product.item.price * product.quantity
@@ -26,6 +29,14 @@ const ShoppingCartScreen = () => {
         // @ts-ignore
         navigation.navigate('cart');
     }
+
+    useEffect(() => {
+        const fetchProducts = () => {
+
+        }
+    })
+
+
 
 
     // @ts-ignore
