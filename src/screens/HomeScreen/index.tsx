@@ -59,7 +59,7 @@ const HomeScreen = () => {
                 </View>
 
             </View>
-            <View style={tw`mt-4 ml-4`}>
+            <View style={tw`mt-4 ml-4 `}>
                 <Text style={tw`font-bold text-lg`}>RESULTS</Text>
             </View>
             <View style={tw`mt-2 flex`}>
@@ -67,7 +67,7 @@ const HomeScreen = () => {
                 <FlatList
                     showsVerticalScrollIndicator={false}
                     data={products}
-                    style={{marginBottom: 4250000000,}}
+                    // style={{marginBottom: 4250000000,}}
 
                         renderItem={({item}) => (
                         <ProductItem key={item.id} item={item}/>
@@ -75,6 +75,8 @@ const HomeScreen = () => {
                 />
 
             </View>
+
+
         </View>
     );
 };
