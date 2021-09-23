@@ -18,6 +18,7 @@ const AddressScreen = () => {
     const [address, setAddress] = useState('');
     const [address1, setAddress1] = useState('');
     const [city, setCity] = useState('');
+    const [addressError, setAddressError] = useState('');
 
     const onCheckout = () => {
         if(!fullname) {
@@ -95,6 +96,7 @@ const AddressScreen = () => {
                                         <View style={tw`flex items-center py-2 justify-center flex-1`}>
                                             <TextInput value={address} onChangeText={setAddress} placeholder={'Street address or P.O. Box'} style={tw`ml-5 pb-2 w-full h-10 text-lg`} >
                                             </TextInput>
+                                            <Text>{addressError && <Text style={tw`mt-1 text-red-600`}>{addressError}</Text>}</Text>
                                         </View>
                                     </View>
                                     <View style={tw`flex bg-white flex-row items-center  border-2  mt-1 border-gray-400 rounded-md `}>
