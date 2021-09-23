@@ -30,13 +30,13 @@ const BottomTabNavigator = () => {
                 <Tab.Screen name="ShoppingCart" component={ShoppingCartScreen}
                             options={{
                                 tabBarIcon: ({color}) => (
-                                    <Ionicons name="person-outline" size={25} color="gray" />
+                                    <AntDesign name="shoppingcart" size={24} color="gray" />
                                 )}
                             }/>
                 <Tab.Screen name="Profile" component={HomeScreen}
                             options={{
                                 tabBarIcon: ({color}) => (
-                                    <AntDesign name="shoppingcart" size={24} color="gray" />
+                                    <Ionicons name="person-outline" size={25} color="gray" />
                                 )}
                             }/>
                 <Tab.Screen name="More" component={HomeScreen}
