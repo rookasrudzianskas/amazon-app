@@ -3,6 +3,7 @@ import {Image, Text, TouchableOpacity, View} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import styles from "../../screens/HomeScreen/style";
 import {FontAwesome} from "@expo/vector-icons";
+import {useNavigation} from "@react-navigation/native";
 
 interface ProductItemProps {
     item: {
@@ -22,8 +23,16 @@ const ProductItem = ({item}: ProductItemProps) => {
         return Math.floor(Math.random()*(max-min+1)+min);
     }
 
+    const onPress = () => {
+        // console.log("Item done")
+        // @ts-ignore
+        navigation.navigate('ProductDetails');
+    }
+
+    const navigation = useNavigation();
+
     return (
-        <TouchableOpacity activeOpacity={0.8}>
+        <TouchableOpacity activeOpacity={0.8} onPress={onPress}>
             <View>
                 <View style={tw`m-2 bg-white shadow-md`}>
                     {/*    product component */}
