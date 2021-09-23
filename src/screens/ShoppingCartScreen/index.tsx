@@ -7,7 +7,7 @@ import products from "../../../assets/data/cart";
 import CartProductItem from "../../components/CartProductItem";
 import Button from "../../components/Button";
 import {useNavigation} from "@react-navigation/native";
-import {CartProduct} from "../../models";
+import {CartProduct, Product} from "../../models";
 import { DataStore } from 'aws-amplify';
 
 const ShoppingCartScreen = () => {
@@ -32,15 +32,29 @@ const ShoppingCartScreen = () => {
     }
 
     useEffect(() => {
-        const fetchProducts = () => {
+        const fetchCartProducts = () => {
         // @TODO query only my cart items
             DataStore.query(CartProduct).then(setCartProducts);
         }
-        fetchProducts();
+        fetchCartProducts();
     }, []);
 
     useEffect(() => {
-    }, []);
+        // query all products that are used in the cart
+        const fetchProducts = async() => {
+            const products = await Promise.all(cartProducts.map(cartProduct =>
+                    DataStore.query(Product, cartProduct.productID),
+            ));
+        }
+
+        fetchProducts();
+        // assign products to the cart items
+
+        cartProducts.map(cartProduct => ({
+            ...cartProduct,
+            product:
+        }))
+    }, [cartProducts]);
 
 
 
