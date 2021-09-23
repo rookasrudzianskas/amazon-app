@@ -1,11 +1,10 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from "../screens/HomeScreen";
-import ShoppingCartScreen from "../screens/ShoppingCartScreen";
 import {AntDesign, Entypo, Feather, Ionicons} from "@expo/vector-icons";
 import HomeStack from "./HomeStack";
+import ShoppingCartStack from "./ShoppingCartStack";
 
 const Tab = createBottomTabNavigator();
 
@@ -28,7 +27,7 @@ const BottomTabNavigator = () => {
                      ), }
                  }
                 />
-                <Tab.Screen name="ShoppingCart" component={ShoppingCartScreen}
+                <Tab.Screen name="ShoppingCart" component={ShoppingCartStack}
                             options={{
                                 tabBarIcon: ({color}) => (
                                     <AntDesign name="shoppingcart" size={24} color="gray" />
