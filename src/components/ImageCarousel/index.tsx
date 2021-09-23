@@ -32,7 +32,7 @@ const ImageCarousel = ({images}: ImageCarouselProps) => {
                        showsHorizontalScrollIndicator={false}
                        horizontal
                        renderItem={({item}) => (
-                <Image source={{uri: item}} key={item} style={styles.image} />
+                <Image source={{uri: item}} key={item.image} style={styles.image} />
             )}
             />
 

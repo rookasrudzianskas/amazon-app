@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {View, Text, TextInput, TouchableOpacity, ScrollView} from "react-native";
+import React, {useEffect, useState} from 'react';
+import {View, Text, TextInput, TouchableOpacity, ScrollView, ActivityIndicator} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import {Entypo, EvilIcons, Feather, Ionicons} from "@expo/vector-icons";
 import product from "../../../assets/data/product";
@@ -8,12 +8,16 @@ import QuantitySelector from "../../components/QuantitySelector";
 import Button from "../../components/Button";
 import ImageCarousel from "../../components/ImageCarousel";
 import {useNavigation, useRoute} from "@react-navigation/native";
+import { DataStore } from 'aws-amplify';
+import {Product} from "../../models";
 
 
 const ProductScreen = () => {
 
-    const [selectedOption, setSelectedOption] = useState(product?.options ? product.options[0] : '');
+    // @ts-ignore
+    const [selectedOption, setSelectedOption] = useState<String|null>(null);
     const [quantity, setQuantity] = useState(1);
+    const [product, setProduct] = useState<Product|undefined>(undefined);
     const route = useRoute();
     console.log(route.params);
 
@@ -24,6 +28,32 @@ const ProductScreen = () => {
         navigation.navigate('HomeScreen');
     }
 
+
+    // @ts-ignore
+    useEffect(() => {
+        // @ts-ignore
+        if(!route.params.id){
+            return;
+        }
+        // @ts-ignore
+        DataStore.query(Product, route.params.id).then(setProduct);
+        // @ts-ignore
+    }, [route?.params?.id]);
+
+    useEffect(() => {
+        if(product?.options) {
+            setSelectedOption(product.options[0]);
+        }
+    }, [product]);
+
+    if(!product) {
+        return <ActivityIndicator />
+    }
+
+
+
+
+    // @ts-ignore
     // @ts-ignore
     return (
         <View style={tw`flex h-full`}>
@@ -77,15 +107,16 @@ const ProductScreen = () => {
                         setSelectedOption(itemValue)
                     )}
                     style={tw`-mt-20 -mb-10`}>
+                    {/*// @ts-ignore*/}
                     {product.options.map(option => (
                         <Picker.Item key={option} label={option} value={option} />
                     ))}
                 </Picker>
 
                 <View style={tw`flex flex-row mt-2 mb-4 items-center`}>
-                    <Text style={tw`text-black text-2xl font-bold `}>${product?.price || '1.00'}
+                    <Text style={tw`text-black text-2xl font-bold `}>${product?.price.toFixed(2) || '1.00'}
                     </Text>
-                    {product.oldPrice && <Text style={tw` text-xl font-normal flex line-through ml-2`}>${product?.oldPrice}</Text>}
+                    {product.oldPrice && <Text style={tw` text-xl font-normal flex line-through ml-2`}>${product?.oldPrice.toFixed(2)}</Text>}
                 </View>
 
                 <View style={tw`mb-6`}>
