@@ -18,7 +18,7 @@ const AddressScreen = () => {
     const [address, setAddress] = useState('');
     const [address1, setAddress1] = useState('');
     const [city, setCity] = useState('');
-    const [addressError, setAddressError] = useState('Invalid shit');
+    const [addressError, setAddressError] = useState('');
 
     const onCheckout = () => {
         if(!fullname) {
@@ -50,7 +50,7 @@ const AddressScreen = () => {
                     </View>
                     <View style={tw`bg-gray-100 p-2`}>
                         <KeyboardAvoidingView  style={{display: 'flex',}} behavior="padding" enabled   keyboardVerticalOffset={100}>
-                            <ScrollView>
+                            <ScrollView   showsVerticalScrollIndicator={false}>
 
                                 <View style={tw`-mt-16`}>
                                     <Picker
@@ -161,7 +161,7 @@ const AddressScreen = () => {
                                                 <View style={tw`flex flex-1 ml-1`}>
                                                     <View style={tw`flex bg-white flex-row items-center  border-2 border-gray-400 rounded-md mb-2 `}>
                                                         <View style={tw`flex items-center mb-1 justify-center flex-1`}>
-                                                            <TextInput value={city} onChangeText={setCity} placeholder={'City'} style={tw`ml-5 pb-2 w-full h-10 text-lg`} >
+                                                            <TextInput value={city} onChangeText={setCity} placeholder={'City'} style={tw`ml-5 pb-1 w-full h-10 text-lg`} >
                                                             </TextInput>
                                                         </View>
                                                     </View>
