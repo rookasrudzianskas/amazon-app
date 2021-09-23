@@ -48,12 +48,15 @@ const ShoppingCartScreen = () => {
         }
 
         fetchProducts();
+
+        console.log(products);
         // assign products to the cart items
 
-        cartProducts.map(cartProduct => ({
+        cartProducts.map(async cartProduct => ({
             ...cartProduct,
-            product:
-        }))
+            product: await DataStore.query(Product, cartProduct.productID),
+        }));
+
     }, [cartProducts]);
 
 
