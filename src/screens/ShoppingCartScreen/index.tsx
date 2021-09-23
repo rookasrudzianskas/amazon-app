@@ -8,10 +8,11 @@ import CartProductItem from "../../components/CartProductItem";
 import Button from "../../components/Button";
 import {useNavigation} from "@react-navigation/native";
 import {CartProduct} from "../../models";
+import { DataStore } from 'aws-amplify';
 
 const ShoppingCartScreen = () => {
 
-    const [products, setProducts] = useState<CartProduct[]>([]);
+    const [cartProducts, setCartProducts] = useState<CartProduct[]>([]);
 
     const totalPrice = products.reduce((summedPrice, product) => (
         summedPrice + product.item.price * product.quantity
@@ -32,8 +33,9 @@ const ShoppingCartScreen = () => {
 
     useEffect(() => {
         const fetchProducts = () => {
-
+            DataStore.query(CartProduct).then(setCartProducts);
         }
+        fetchProducts();
     })
 
 
@@ -65,7 +67,7 @@ const ShoppingCartScreen = () => {
 
                 <View style={tw`px-2`}>
                     <View style={tw`flex flex-row`}>
-                        <Text style={tw`font-bold`}>Subtotal ({products?.length} items): </Text>
+                        <Text style={tw`font-bold`}>Subtotal ({cartProducts?.length} items): </Text>
                         <Text style={tw`font-bold text-red-600`}>${totalPrice.toFixed(2)}</Text>
                     </View>
 
@@ -87,7 +89,7 @@ const ShoppingCartScreen = () => {
 
                 <FlatList
                     showsVerticalScrollIndicator={false}
-                    data={products}
+                    data={cartProducts}
 
                     renderItem={({item}) => (
                         <CartProductItem key={item.id} cartItem={item}/>
