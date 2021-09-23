@@ -29,6 +29,7 @@ const HomeScreen = () => {
         fetchSomething();
     }, []);
 
+    // @ts-ignore
     return (
 
         <View style={tw`mb-36`}>
@@ -92,6 +93,7 @@ const HomeScreen = () => {
                     // style={{marginBottom: 4250000000,}}
 
                         renderItem={({item}) => (
+        // @ts-ignore
                         <ProductItem key={item.id} item={item}/>
                     )}
                 />
