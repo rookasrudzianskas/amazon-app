@@ -21,12 +21,18 @@ const AddressScreen = () => {
     const [addressError, setAddressError] = useState('');
 
     const onCheckout = () => {
+        if(addressError) {
+            Alert.alert("Fix all the field errors, before submitting the order");
+            return;
+        }
         if(!fullname) {
-            Alert.alert('Your name is needeed, 🥰')
+            Alert.alert('Your name is needeed, 🥰');
+            return;
         }
 
         if(!phone) {
-            Alert.alert('Your phone is needeed, ☎️')
+            Alert.alert('Your phone is needeed, ☎️');
+            return;
         }
     }
 
