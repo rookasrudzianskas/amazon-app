@@ -5,6 +5,7 @@ import Router from "./src/router";
 
 import Amplify from 'aws-amplify';
 import config from './src/aws-exports';
+// @ts-ignore
 import { withAuthenticator } from 'aws-amplify-react-native';
 
 Amplify.configure({
@@ -15,7 +16,7 @@ Amplify.configure({
 });
 
 
-export default function App() {
+const App = () => {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
@@ -35,3 +36,5 @@ const styles = StyleSheet.create({
 });
 
 // backend
+
+export default withAuthenticator(App);
