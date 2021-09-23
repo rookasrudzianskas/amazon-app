@@ -8,14 +8,14 @@ import QuantitySelector from "../../components/QuantitySelector";
 import Button from "../../components/Button";
 import ImageCarousel from "../../components/ImageCarousel";
 import {useNavigation, useRoute} from "@react-navigation/native";
-import { DataStore } from 'aws-amplify';
-import {Product} from "../../models";
+import {Auth, DataStore} from 'aws-amplify';
+import {CartProduct, Product} from "../../models";
 
 
 const ProductScreen = () => {
 
     // @ts-ignore
-    const [selectedOption, setSelectedOption] = useState<String|null>(null);
+    const [selectedOption, setSelectedOption] = useState<String|undefined>(undefined);
     const [quantity, setQuantity] = useState(1);
     const [product, setProduct] = useState<Product|undefined>(undefined);
     const route = useRoute();
@@ -48,6 +48,24 @@ const ProductScreen = () => {
 
     if(!product) {
         return <ActivityIndicator />
+    }
+
+    const onAddToCart = async () => {
+        const userData = await Auth.currentAuthenticatedUser();
+        if(!product || !userData) {
+            return;
+        }
+        // console.log(userData);
+
+        const newCartProduct = new CartProduct({
+            userSub: userData.attributes.sub,
+            quantity,
+        // @ts-ignore
+            option: selectedOption,
+            productID: product.id,
+        });
+
+        await DataStore.save(newCartProduct);
     }
 
 
@@ -159,9 +177,7 @@ const ProductScreen = () => {
 
                 <View style={tw`mb-24`}>
                     {/*// @ts-ignore*/}
-                    <Button bgcolor={"500"} color={'bg-yellow-400'} text={"Add To Card"} onPress={() => {
-                        console.warn("Hello");
-                    }}/>
+                    <Button bgcolor={"500"} color={'bg-yellow-400'} text={"Add To Card"} onPress={onAddToCart}/>
                     {/*// @ts-ignore*/}
                     <Button bgcolor={"600"} color={'bg-yellow-500'} text={"Buy Now"} onPress={() => {
                         console.warn("Hello");
