@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, Image, FlatList, TextInput, TouchableOpacity} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import styles from './style';
@@ -7,6 +7,7 @@ import ProductItem from "../../components/ProductItem";
 import products from "../../../assets/data/products";
 import {Entypo, Feather, Ionicons} from "@expo/vector-icons";
 import {useNavigation} from "@react-navigation/native";
+import {Product} from "../../models";
 
 const HomeScreen = () => {
 
@@ -15,6 +16,8 @@ const HomeScreen = () => {
         // @ts-ignore
         navigation.navigate('Home');
     }
+
+    const [products, setProducts] = useState<Product[]>([]);
 
     return (
 
