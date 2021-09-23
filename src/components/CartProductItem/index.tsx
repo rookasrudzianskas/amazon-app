@@ -63,7 +63,7 @@ const CartProductItem = ({cartItem}: CartProductItemProps) => {
                                                 <Text style={tw`text-black text-lg`}>from </Text>
                                                 <Text style={tw`text-red-600 text-xl font-bold`}>${item?.price || '1.00'}
                                                 </Text>
-                                                {item.oldPrice && <Text style={tw`text-xs font-normal flex line-through`}> ${item?.oldPrice || '1.00'}</Text>}
+                                                {/*{item.oldPrice && <Text style={tw`text-xs font-normal flex line-through`}> ${item?.oldPrice || '1.00'}</Text>}*/}
                                             </View>
 
                                             <View style={tw``}>

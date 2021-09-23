@@ -36,7 +36,7 @@ const ShoppingCartScreen = () => {
             DataStore.query(CartProduct).then(setCartProducts);
         }
         fetchProducts();
-    })
+    }, []);
 
 
 
