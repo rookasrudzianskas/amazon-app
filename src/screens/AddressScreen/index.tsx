@@ -18,7 +18,7 @@ const AddressScreen = () => {
     const [address, setAddress] = useState('');
     const [address1, setAddress1] = useState('');
     const [city, setCity] = useState('');
-    const [addressError, setAddressError] = useState('');
+    const [addressError, setAddressError] = useState('Invalid shit');
 
     const onCheckout = () => {
         if(!fullname) {
@@ -95,11 +95,19 @@ const AddressScreen = () => {
                                             <Text style={tw`font-bold`}>Address</Text>
                                             <View style={tw`flex bg-white flex-row items-center  border-2  mt-3 border-gray-400 rounded-md `}>
                                                 <View style={tw`flex items-center py-2 justify-center flex-1`}>
-                                                    <TextInput value={address} onChangeText={setAddress} placeholder={'Street address or P.O. Box'} style={tw`ml-5 pb-2 w-full h-10 text-lg`} >
+                                                    <TextInput value={address} onChangeText={(text) => {
+                                                        setAddress(text);
+                                                        setAddressError('');
+                                                    }}
+                                                               placeholder={'Street address or P.O. Box'} style={tw`ml-5 pb-2 w-full h-10 text-lg`} >
                                                     </TextInput>
-                                                    <Text>{addressError && <Text style={tw`mt-1 text-red-600`}>{addressError}</Text>}</Text>
                                                 </View>
+
                                             </View>
+                                            <View>
+                                                {!!addressError && <Text style={tw`mt-1 text-red-600 mb-1`}>{addressError}</Text>}
+                                            </View>
+
                                             <View style={tw`flex bg-white flex-row items-center  border-2  mt-1 border-gray-400 rounded-md `}>
                                                 <View style={tw`flex items-center py-2 justify-center flex-1`}>
                                                     <TextInput value={address1} onChangeText={setAddress1} placeholder={'Apt., Suite, Unit, Building, (optional)'} style={tw`ml-5 pb-2 w-full h-10 text-lg`} >
