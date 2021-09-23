@@ -55,7 +55,7 @@ const AddressScreen = () => {
                         </View>
                     </View>
                     <View style={tw`bg-gray-100 p-2`}>
-                        <KeyboardAvoidingView  style={{display: 'flex',}} behavior={Platform.OS === 'ios' ? 'padding' : 'height'} enabled keyboardVerticalOffset={100}>
+                        <KeyboardAvoidingView  style={{display: 'flex',}} behavior={Platform.OS === 'ios' ? 'padding' : 'height'} enabled keyboardVerticalOffset={10}>
                             <ScrollView   showsVerticalScrollIndicator={false}>
 
                                 <View style={tw`-mt-16`}>
