@@ -13,10 +13,9 @@ const Tab = createBottomTabNavigator();
 const BottomTabNavigator = () => {
     return (
     // @ts-ignore
-            <Tab.Navigator tabBarOptions={{
-                showLabel: false,
-            }} screenOptions={{
+            <Tab.Navigator screenOptions={{
                 headerShown: false,
+                tabBarShowLabel: false,
             }}>
 
                 <Tab.Screen name="Home" component={HomeStack}
