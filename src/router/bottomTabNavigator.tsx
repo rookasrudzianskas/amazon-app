@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from "../screens/HomeScreen";
 import ShoppingCartScreen from "../screens/ShoppingCartScreen";
-import {Entypo} from "@expo/vector-icons";
+import {AntDesign, Entypo, Feather, Ionicons} from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();
 
@@ -13,21 +13,38 @@ const BottomTabNavigator = () => {
     return (
     // @ts-ignore
             <Tab.Navigator tabBarOptions={{
-                showLabel: false
+                showLabel: false,
             }} screenOptions={{
-                headerShown: false
+                headerShown: false,
             }}>
+
                 <Tab.Screen name="Home" component={HomeScreen}
     // @ts-ignore
                  options={{
                      tabBarIcon: ({color}) => (
-                     <Entypo name="home" size={24} color="gray" />
-                     )}
+                         <AntDesign name="home" size={25} color="gray" />
+
+                     ), }
                  }
                 />
-                <Tab.Screen name="ShoppingCart" component={ShoppingCartScreen} />
-                <Tab.Screen name="Profile" component={HomeScreen} />
-                <Tab.Screen name="More" component={HomeScreen} />
+                <Tab.Screen name="ShoppingCart" component={ShoppingCartScreen}
+                            options={{
+                                tabBarIcon: ({color}) => (
+                                    <Ionicons name="person-outline" size={25} color="gray" />
+                                )}
+                            }/>
+                <Tab.Screen name="Profile" component={HomeScreen}
+                            options={{
+                                tabBarIcon: ({color}) => (
+                                    <AntDesign name="shoppingcart" size={24} color="gray" />
+                                )}
+                            }/>
+                <Tab.Screen name="More" component={HomeScreen}
+                            options={{
+                                tabBarIcon: ({color}) => (
+                                    <Feather name="menu" size={25} color="gray" />
+                                )}
+                            }/>
             </Tab.Navigator>
     );
 };
