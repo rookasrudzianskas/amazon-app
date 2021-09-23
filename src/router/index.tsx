@@ -4,10 +4,13 @@ import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import HomeScreen from "../screens/HomeScreen";
 import {View, Text} from "react-native";
 import tw from "tailwind-react-native-classnames";
+import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 
 const Router = () => {
 
-    const Stack = createNativeStackNavigator();
+    const Root = createNativeStackNavigator();
+    const Tab = createBottomTabNavigator();
+
     //
     // function HomeScreen() {
     //     return (
@@ -19,11 +22,11 @@ const Router = () => {
 
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="Home"  screenOptions={{
+            <Root.Navigator initialRouteName="Home"  screenOptions={{
                 headerShown: false
             }}>
-                <Stack.Screen name="Home" component={HomeScreen} />
-            </Stack.Navigator>
+                <Root.Screen name="Home" component={HomeScreen} />
+            </Root.Navigator>
         </NavigationContainer>
     );
 };
