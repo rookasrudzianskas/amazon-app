@@ -182,7 +182,7 @@ const AddressScreen = () => {
                                             <Text style={tw`ml-2`}>Make this my default address</Text>
                                         </View>
 
-                                        <View style={tw`flex flex-row items-center bg-white py-2 rounded-md mt-3`}>
+                                        <View style={tw`flex flex-row items-center bg-white py-3 rounded-md mt-3 border-2 border-gray-400`}>
                                             <View style={tw`flex flex-1`}>
                                                 <Text style={tw`font-bold text-lg ml-2`}>Delivery Instructions(optional)</Text>
                                                 <Text style={tw`font-bold ml-2`}>Notes, preferences, access codes and more.</Text>
