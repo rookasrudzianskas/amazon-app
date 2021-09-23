@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from "../screens/HomeScreen";
 import ShoppingCartScreen from "../screens/ShoppingCartScreen";
 import {AntDesign, Entypo, Feather, Ionicons} from "@expo/vector-icons";
+import HomeStack from "./HomeStack";
 
 const Tab = createBottomTabNavigator();
 
@@ -18,7 +19,7 @@ const BottomTabNavigator = () => {
                 headerShown: false,
             }}>
 
-                <Tab.Screen name="Home" component={HomeScreen}
+                <Tab.Screen name="Home" component={HomeStack}
     // @ts-ignore
                  options={{
                      tabBarIcon: ({color}) => (
