@@ -26,7 +26,9 @@ const ProductItem = ({item}: ProductItemProps) => {
     const onPress = () => {
         // console.log("Item done")
         // @ts-ignore
-        navigation.navigate('ProductDetails');
+        navigation.navigate('ProductDetails', {
+            id: item.id
+        });
     }
 
     const navigation = useNavigation();
