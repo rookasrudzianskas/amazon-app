@@ -68,7 +68,7 @@ const ProductScreen = () => {
         await DataStore.save(newCartProduct);
         Alert.alert("The order was submitted successfully");
         // @ts-ignore
-        navigation.navigate('HomeScreen');
+        navigation.navigate('ShoppingCart');
     }
 
 
