@@ -19,7 +19,7 @@ type CartProduct @model @auth(rules: [{ allow: public }]) {
   quantity: Int!
   options: String
 
-  productId: ID!
+  productID: ID!
   product: Product @connection(fields: ["productID"])
 }
 
