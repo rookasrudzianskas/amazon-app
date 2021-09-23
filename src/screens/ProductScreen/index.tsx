@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {View, Text, TextInput, TouchableOpacity, ScrollView, ActivityIndicator} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import {Entypo, EvilIcons, Feather, Ionicons} from "@expo/vector-icons";
-import product from "../../../assets/data/product";
+// import product from "../../../assets/data/product";
 import {Picker} from '@react-native-picker/picker';
 import QuantitySelector from "../../components/QuantitySelector";
 import Button from "../../components/Button";
@@ -66,6 +66,8 @@ const ProductScreen = () => {
         });
 
         await DataStore.save(newCartProduct);
+        // @ts-ignore
+        navigation.navigate('HomeScreen');
     }
 
 
