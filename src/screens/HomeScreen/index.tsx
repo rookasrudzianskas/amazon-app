@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, Text, Image, FlatList, TextInput, TouchableOpacity} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import styles from './style';
@@ -8,6 +8,7 @@ import products from "../../../assets/data/products";
 import {Entypo, Feather, Ionicons} from "@expo/vector-icons";
 import {useNavigation} from "@react-navigation/native";
 import {Product} from "../../models";
+import { DataStore } from 'aws-amplify';
 
 const HomeScreen = () => {
 
@@ -18,6 +19,15 @@ const HomeScreen = () => {
     }
 
     const [products, setProducts] = useState<Product[]>([]);
+        console.log(products)
+
+    useEffect(() => {
+        const fetchSomething = async () => {
+            // @ts-ignore
+            setProducts(await DataStore.query(Product));
+        }
+        fetchSomething();
+    }, []);
 
     return (
 

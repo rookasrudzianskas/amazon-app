@@ -65,8 +65,8 @@ const ProductItem = ({item}: ProductItemProps) => {
 
                                 <View style={tw`flex flex-row mt-2 mb-4 items-center`}>
                                     <Text style={tw`text-black text-lg`}>from </Text>
-                                    <Text style={tw`text-black text-xl font-bold`}>${item?.price || '1.00'}
-                                        {item.oldPrice && <Text style={tw`text-xs font-normal flex line-through`}>${item?.oldPrice}</Text>}
+                                    <Text style={tw`text-black text-xl font-bold`}>${item?.price.toFixed(2) || '1.00'}
+                                        {item.oldPrice && <Text style={tw`text-xs font-normal flex line-through`}>${item?.oldPrice.toFixed(2)}</Text>}
                                     </Text>
                                 </View>
                             </View>
