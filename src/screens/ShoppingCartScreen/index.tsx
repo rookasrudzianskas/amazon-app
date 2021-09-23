@@ -33,9 +33,13 @@ const ShoppingCartScreen = () => {
 
     useEffect(() => {
         const fetchProducts = () => {
+        // @TODO query only my cart items
             DataStore.query(CartProduct).then(setCartProducts);
         }
         fetchProducts();
+    }, []);
+
+    useEffect(() => {
     }, []);
 
 
