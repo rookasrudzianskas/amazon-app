@@ -4,20 +4,31 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from "../screens/HomeScreen";
 import ShoppingCartScreen from "../screens/ShoppingCartScreen";
+import {Entypo} from "@expo/vector-icons";
 
-const BottomTabNav = createBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
 
 const BottomTabNavigator = () => {
     return (
-            <BottomTabNav.Navigator screenOptions={{
+    // @ts-ignore
+            <Tab.Navigator tabBarOptions={{
+                showLabel: false
+            }} screenOptions={{
                 headerShown: false
             }}>
-                <BottomTabNav.Screen name="Home" component={HomeScreen} />
-                <BottomTabNav.Screen name="ShoppingCart" component={ShoppingCartScreen} />
-                <BottomTabNav.Screen name="Profile" component={HomeScreen} />
-                <BottomTabNav.Screen name="More" component={HomeScreen} />
-            </BottomTabNav.Navigator>
+                <Tab.Screen name="Home" component={HomeScreen}
+    // @ts-ignore
+                 options={{
+                     tabBarIcon: ({color}) => (
+                     <Entypo name="home" size={24} color="gray" />
+                     )}
+                 }
+                />
+                <Tab.Screen name="ShoppingCart" component={ShoppingCartScreen} />
+                <Tab.Screen name="Profile" component={HomeScreen} />
+                <Tab.Screen name="More" component={HomeScreen} />
+            </Tab.Navigator>
     );
 };
 
