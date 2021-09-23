@@ -3,6 +3,16 @@ import React from 'react';
 import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import Router from "./src/router";
 
+import Amplify from 'aws-amplify';
+import config from './src/aws-exports';
+
+Amplify.configure({
+  ...config,
+  Analytics: {
+    disabled: true,
+  },
+});
+
 
 export default function App() {
   return (
