@@ -6,15 +6,24 @@ import tailwind from "tailwind-rn";
 import ProductItem from "../../components/ProductItem";
 import products from "../../../assets/data/products";
 import {Entypo, Feather, Ionicons} from "@expo/vector-icons";
+import {useNavigation} from "@react-navigation/native";
 
 const HomeScreen = () => {
+
+    const navigation = useNavigation();
+    const goBack = () => {
+        // @ts-ignore
+        navigation.navigate('Home');
+    }
 
     return (
 
         <View style={tw`mb-36`}>
             <View style={tw`max-w-xl bg-green-400 p-2`}>
                 <View style={tw`mt-12 flex flex-row items-center shadow-xl`}>
+                <TouchableOpacity onPress={goBack}>
                     <Entypo name="chevron-thin-left" size={24} color="#37475a" style={tw`mr-2`} />
+                </TouchableOpacity>
                     <View style={tw`flex flex-row items-center bg-gray-100 rounded-md`}>
                             <Feather name="search" size={22} color="#37475a" style={tw`ml-2`}/>
                         <View style={tw`bg-gray-100 px-3 py-3 rounded-md`}>

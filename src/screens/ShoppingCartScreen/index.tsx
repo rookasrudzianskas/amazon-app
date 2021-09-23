@@ -21,6 +21,13 @@ const ShoppingCartScreen = () => {
         navigation.navigate('addressScreen');
     }
 
+
+    const goBack = () => {
+        // @ts-ignore
+        navigation.navigate('cart');
+    }
+
+
     // @ts-ignore
     return (
         <View>
@@ -28,7 +35,9 @@ const ShoppingCartScreen = () => {
                 <View style={tw`mb-4`}>
                     <View style={tw`max-w-xl bg-green-400 p-2`}>
                         <View style={tw`mt-12 flex flex-row items-center shadow-xl`}>
-                            <Entypo name="chevron-thin-left" size={24} color="#37475a" style={tw`mr-2`} />
+                            <TouchableOpacity onPress={goBack}>
+                                <Entypo name="chevron-thin-left" size={24} color="#37475a" style={tw`mr-2`} />
+                            </TouchableOpacity>
                             <View style={tw`flex flex-row items-center bg-gray-100 rounded-md`}>
                                 <Feather name="search" size={22} color="#37475a" style={tw`ml-2`}/>
                                 <View style={tw`bg-gray-100 px-3 py-3 rounded-md`}>

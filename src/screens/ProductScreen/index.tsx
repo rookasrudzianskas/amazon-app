@@ -7,7 +7,7 @@ import {Picker} from '@react-native-picker/picker';
 import QuantitySelector from "../../components/QuantitySelector";
 import Button from "../../components/Button";
 import ImageCarousel from "../../components/ImageCarousel";
-import {useRoute} from "@react-navigation/native";
+import {useNavigation, useRoute} from "@react-navigation/native";
 
 
 const ProductScreen = () => {
@@ -17,13 +17,22 @@ const ProductScreen = () => {
     const route = useRoute();
     console.log(route.params);
 
+
+    const navigation = useNavigation();
+    const goBack = () => {
+        // @ts-ignore
+        navigation.navigate('HomeScreen');
+    }
+
     // @ts-ignore
     return (
         <View style={tw`flex h-full`}>
             <View style={tw`mb-4`}>
                 <View style={tw`max-w-xl bg-green-400 p-2`}>
                     <View style={tw`mt-12 flex flex-row items-center shadow-xl`}>
-                        <Entypo name="chevron-thin-left" size={24} color="#37475a" style={tw`mr-2`} />
+                        <TouchableOpacity onPress={goBack}>
+                            <Entypo name="chevron-thin-left" size={24} color="#37475a" style={tw`mr-2`} />
+                        </TouchableOpacity>
                         <View style={tw`flex flex-row items-center bg-gray-100 rounded-md`}>
                             <Feather name="search" size={22} color="#37475a" style={tw`ml-2`}/>
                             <View style={tw`bg-gray-100 px-3 py-3 rounded-md`}>

@@ -7,6 +7,7 @@ import {Picker} from "@react-native-picker/picker";
 // @ts-ignore
 import countryList from "country-list";
 import Button from '../../components/Button';
+import {useNavigation} from "@react-navigation/native";
 
 const countries = countryList.getData();
 
@@ -42,13 +43,22 @@ const AddressScreen = () => {
         }
     }
 
+    const navigation = useNavigation();
+
+    const goBack = () => {
+        // @ts-ignore
+        navigation.navigate('cart');
+    }
+
     return (
         <View style={tw``}>
             <View style={tw`flex h-full`}>
                 <View style={tw`mb-4 z-50`}>
                     <View style={tw`max-w-xl bg-green-400 p-2`}>
                         <View style={tw`mt-12 flex flex-row items-center shadow-xl`}>
-                            <Entypo name="chevron-thin-left" size={24} color="#37475a" style={tw`mr-2`} />
+                            <TouchableOpacity onPress={goBack}>
+                                <Entypo name="chevron-thin-left" size={24} color="#37475a" style={tw`mr-2`} />
+                            </TouchableOpacity>
                             <View style={tw`flex items-center `}>
                                 <Text style={tw`mx-16 text-blue-900 text-lg font-bold`}>Enter a shipping address</Text>
                             </View>
