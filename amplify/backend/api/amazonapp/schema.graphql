@@ -22,6 +22,12 @@ type CartProduct @model {
   product: Product @connection(fields: ["productID"])
 }
 
+#type Order @model {
+#  id: ID!
+#
+#  userSub: String!
+#
+#}
 
 
 
