@@ -6,12 +6,21 @@ import products from "../../../assets/data/cart";
 
 import CartProductItem from "../../components/CartProductItem";
 import Button from "../../components/Button";
+import {useNavigation} from "@react-navigation/native";
 
 const ShoppingCartScreen = () => {
 
     const totalPrice = products.reduce((summedPrice, product) => (
         summedPrice + product.item.price * product.quantity
     ), 0);
+
+    const navigation = useNavigation();
+
+    const onCheckout = () => {
+        // @ts-ignore
+        navigation.navigate('addressScreen');
+    }
+
     // @ts-ignore
     return (
         <View>
@@ -41,7 +50,7 @@ const ShoppingCartScreen = () => {
                     </View>
 
                     <View style={tw``}>
-                        <Button  bgcolor={'400'}  color={'bg-yellow-400'} text={'Proceed to checkout'} onPress={() => console.log("ROkas")}/>
+                        <Button  bgcolor={'400'}  color={'bg-yellow-400'} text={'Proceed to checkout'} onPress={onCheckout}/>
                     </View>
 
                     <View style={tw`flex flex-row items-center mt-6 border-b-2 border-gray-300`}>
