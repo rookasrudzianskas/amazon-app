@@ -53,6 +53,7 @@ const ShoppingCartScreen = () => {
             setCartProducts(currentCartProducts =>
                 currentCartProducts.map(cartProduct => ({
                     ...cartProduct,
+            // @ts-ignore
                     product: products.find(p => p.id === cartProduct.productID),
                 })),
             );

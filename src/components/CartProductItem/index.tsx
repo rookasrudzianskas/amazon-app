@@ -26,8 +26,14 @@ interface CartProductItemProps {
 }
 
 const CartProductItem = ({cartItem}: CartProductItemProps) => {
-    const {quantity: quantityProp, product} = cartItem;
-    const [quantity, setQuantity] = useState(quantityProp);
+    const {quantity: product} = cartItem;
+    // const [quantity, setQuantity] = useState(quantityProp);
+
+    const updateQuantity = async () => {
+
+    }
+
+
 
     const navigation = useNavigation();
     const onGoTo = () => {
