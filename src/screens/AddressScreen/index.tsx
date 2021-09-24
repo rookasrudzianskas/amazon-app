@@ -27,7 +27,7 @@ const AddressScreen = () => {
         // get user details
         const userData = await Auth.currentAuthenticatedUser();
         // create a new order
-        console.log(userData.attributes.sub);
+        // console.log(userData.attributes.sub);
 
         const newOrder = await DataStore.save(
             new Order({
@@ -63,7 +63,8 @@ const AddressScreen = () => {
         await Promise.all(cartItems.map(cartItem => DataStore.delete(cartItem)));
 
         // redirect home
-        navigation.navigate('Home');
+        // @ts-ignore
+        navigation.navigate('HomeScreen');
     };
 
     const onCheckout = () => {
@@ -82,7 +83,7 @@ const AddressScreen = () => {
             return;
         }
 
-        console.warn('Success. CHeckout');
+        // console.warn('Success. CHeckout');
         saveOrder();
     };
 
