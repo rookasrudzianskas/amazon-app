@@ -13,11 +13,6 @@ const ShoppingCartScreen = () => {
 
     const [cartProducts, setCartProducts] = useState<CartProduct[]>([]);
 
-    // const totalPrice = products.reduce((summedPrice, product) => (
-    //     summedPrice + product.item.price * product.quantity
-    // ), 0);
-    const totalPrice = 0;
-
     const navigation = useNavigation();
 
     const onCheckout = () => {
@@ -69,6 +64,11 @@ const ShoppingCartScreen = () => {
         if(cartProducts.filter(cp => !cp.product).length !== 0) {
             return <ActivityIndicator size="large" color="black" style={tw`flex items-center justify-center mt-36`} />
         }
+
+
+    const totalPrice = cartProducts.reduce((summedPrice, product) => (
+        summedPrice + (product?.product?.price || 0) * product.quantity
+    ), 0);
 
 
 
