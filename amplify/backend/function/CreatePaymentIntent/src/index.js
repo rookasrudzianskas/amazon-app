@@ -1,15 +1,15 @@
 
 
 exports.handler = async (event) => {
-    // TODO implement
-    const response = {
-        statusCode: 200,
-    //  Uncomment below to enable CORS requests
-    //  headers: {
-    //      "Access-Control-Allow-Origin": "*",
-    //      "Access-Control-Allow-Headers": "*"
-    //  }, 
-        body: JSON.stringify('Hello from Lambda!'),
-    };
-    return response;
+    const { typeName, arguments } = event;
+
+    if(typeName !== 'Mutation') {
+        throw new Error("Request is not the mutation");
+    }
+
+    if(!arguments?.amount) {
+        throw new Error('Amount is required');
+    }
+
+
 };
