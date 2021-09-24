@@ -11,7 +11,7 @@ import {useNavigation, useRoute} from "@react-navigation/native";
 import {API, Auth, DataStore, graphqlOperation} from 'aws-amplify';
 import {CartProduct, Order, OrderProduct} from "../../models";
 import {createPaymentIntent} from "../../graphql/mutations";
-import {initPaymentSheet} from "@stripe/stripe-react-native";
+import {initPaymentSheet, presentPaymentSheet} from "@stripe/stripe-react-native";
 
 const countries = countryList.getData();
 
@@ -132,6 +132,21 @@ const AddressScreen = () => {
         if (error) {
             // @ts-ignore
             Alert.alert(error);
+        }
+    }
+
+    const openPaymentSheet = async () => {
+        if (!clientSecret) {
+            return;
+        }
+        // @ts-ignore
+        const {error} = await presentPaymentSheet({clientSecret});
+
+        if (error) {
+            Alert.alert(`Error code: ${error.code}`, error.message);
+        } else {
+            saveOrder();
+            Alert.alert('Success', 'Your payment is confirmed!');
         }
     }
 
