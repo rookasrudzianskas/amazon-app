@@ -68,20 +68,20 @@ const AddressScreen = () => {
     };
 
     const onCheckout = () => {
-        if (addressError) {
-            Alert.alert('Fix all field errors before submiting');
-            return;
-        }
-
-        if (!fullname) {
-            Alert.alert('Please fill in the fullname field');
-            return;
-        }
-
-        if (!phone) {
-            Alert.alert('Please fill in the phone number field');
-            return;
-        }
+        // if (addressError) {
+        //     Alert.alert('Fix all field errors before submiting');
+        //     return;
+        // }
+        //
+        // if (!fullname) {
+        //     Alert.alert('Please fill in the fullname field');
+        //     return;
+        // }
+        //
+        // if (!phone) {
+        //     Alert.alert('Please fill in the phone number field');
+        //     return;
+        // }
 
         // console.warn('Success. CHeckout');
         saveOrder();
@@ -132,7 +132,7 @@ const AddressScreen = () => {
                                     </Picker>
                                 </View>
 
-                                <View style={tw`mb-24`}>
+                                <View style={tw``}>
                                     <Button  bgcolor={'400'}  color={'bg-yellow-400'}  text={'Checkout'} onPress={onCheckout}/>
                                 </View>
 
