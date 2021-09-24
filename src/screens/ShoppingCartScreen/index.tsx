@@ -29,7 +29,7 @@ const ShoppingCartScreen = () => {
     useEffect(() => {
         const fetchCartProducts = async() => {
             const userData = await Auth.currentAuthenticatedUser();
-            console.log("This is the id", userData.attributes.sub)
+            // console.log("This is the id", userData.attributes.sub)
         // @TODO query only my cart items
             DataStore.query(CartProduct, (cp) => cp.userSub("eq", userData.attributes.sub)).then(setCartProducts);
         }
@@ -63,14 +63,27 @@ const ShoppingCartScreen = () => {
     }, [cartProducts]);
 
     useEffect(() => {
-        const subscription = cartProducts.map(cp =>
+        const subscriptions = cartProducts.map(cp =>
             DataStore.observe(CartProduct, cp.id).subscribe(msg => {
-            console.log(msg.model, msg.opType, msg.element);
+                if (msg.opType === 'UPDATE') {
+                    setCartProducts(curCartProducts =>
+                        curCartProducts.map(cp => {
+                            if (cp.id !== msg.element.id) {
+                                console.log('differnt id');
+                                return cp;
+                            }
+                            return {
+                                ...cp,
+                                ...msg.element,
+                            };
+                        }),
+                    );
+                }
             }),
         );
+
         return () => {
-            // @ts-ignore
-            subscription.forEach(sub => sub.unsubscribe());
+            subscriptions.forEach(sub => sub.unsubscribe());
         };
     }, [cartProducts]);
 
