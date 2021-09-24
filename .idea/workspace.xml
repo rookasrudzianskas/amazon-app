@@ -3,14 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d7b8be3b-8a07-4423-b8da-1d51c1a0d238" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/API.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/API.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphql/mutations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/mutations.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphql/queries.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/queries.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphql/schema.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/schema.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphql/subscriptions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/subscriptions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/index.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/schema.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/AddressScreen/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/AddressScreen/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +71,7 @@
       <option name="presentableId" value="Default" />
       <updated>1632213472501</updated>
       <workItem from="1632213476886" duration="17788000" />
-      <workItem from="1632314834585" duration="44310000" />
+      <workItem from="1632314834585" duration="44502000" />
     </task>
     <servers />
   </component>

@@ -9,7 +9,7 @@ import countryList from "country-list";
 import Button from '../../components/Button';
 import {useNavigation} from "@react-navigation/native";
 import {Auth, DataStore} from 'aws-amplify';
-import {CartProduct, Order} from "../../models";
+import {CartProduct, Order, OrderProduct} from "../../models";
 
 const countries = countryList.getData();
 
@@ -42,6 +42,14 @@ const AddressScreen = () => {
             cp.userSub('eq', userData.attributes.sub),
         );
 
+        await Promise.all(
+            cartItems.map(cartItem => DataStore.save(new OrderProduct({
+                quantity: cartItem.quantity,
+                option: cartItem.option,
+                productID: cartItem.productID,
+                orderID: newOrder.id,
+            })))
+        )
     //    delete all the cart Items
 
     //    redirect home
