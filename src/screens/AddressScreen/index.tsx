@@ -11,6 +11,7 @@ import {useNavigation, useRoute} from "@react-navigation/native";
 import {API, Auth, DataStore, graphqlOperation} from 'aws-amplify';
 import {CartProduct, Order, OrderProduct} from "../../models";
 import {createPaymentIntent} from "../../graphql/mutations";
+import {initPaymentSheet} from "@stripe/stripe-react-native";
 
 const countries = countryList.getData();
 
@@ -23,7 +24,7 @@ const AddressScreen = () => {
     const [address1, setAddress1] = useState('');
     const [city, setCity] = useState('');
     const [addressError, setAddressError] = useState('');
-    const [clientSecret, setClientSecret] = useState<String | null>(null);
+    const [clientSecret, setClientSecret] = useState<string | null>(null);
 
     const saveOrder = async () => {
         // get user details
@@ -115,12 +116,23 @@ const AddressScreen = () => {
 
     useEffect(() => {
         if(clientSecret) {
-            initPaymentSheet();
+            initializePaymentSheet();
         }
     }, [clientSecret]);
 
-    const initPaymentSheet = async () => {
 
+    const initializePaymentSheet = async () => {
+        if (!clientSecret) {
+            return;
+        }
+        const {error} = await initPaymentSheet({
+            paymentIntentClientSecret: clientSecret,
+        });
+        console.log('success');
+        if (error) {
+            // @ts-ignore
+            Alert.alert(error);
+        }
     }
 
     const goBack = () => {
