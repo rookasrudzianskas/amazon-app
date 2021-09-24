@@ -84,7 +84,9 @@ const AddressScreen = () => {
         // }
 
         // console.warn('Success. Checkout');
-        saveOrder();
+        // saveOrder();
+    //    handle payments
+
     };
 
 
