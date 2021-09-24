@@ -12,7 +12,6 @@ import { DataStore } from 'aws-amplify';
 const ShoppingCartScreen = () => {
 
     const [cartProducts, setCartProducts] = useState<CartProduct[]>([]);
-    const [loading, setLoading] = useState(true);
 
     // const totalPrice = products.reduce((summedPrice, product) => (
     //     summedPrice + product.item.price * product.quantity
@@ -34,7 +33,6 @@ const ShoppingCartScreen = () => {
 
     useEffect(() => {
         const fetchCartProducts = async() => {
-            setLoading(true);
         // @TODO query only my cart items
             DataStore.query(CartProduct).then(setCartProducts);
         }
@@ -42,25 +40,28 @@ const ShoppingCartScreen = () => {
     }, []);
 
     useEffect(() => {
-        // query all products that are used in the cart
-        if(cartProducts.filter(cp => !cp.product).length === 0){
-            setLoading(false);
+        if (cartProducts.filter(cp => !cp.product).length === 0) {
             return;
         }
 
-        const fetchProducts = async() => {
-            const products = await Promise.all(cartProducts.map(cartProduct =>
+        const fetchProducts = async () => {
+            // query all products that are used in cart
+            const products = await Promise.all(
+                cartProducts.map(cartProduct =>
                     DataStore.query(Product, cartProduct.productID),
-            ));
+                ),
+            );
 
-            setCartProducts(currentCartProducts => (cartProducts.map(cartProduct => ({
-                ...cartProduct,
-                product: products.find(p => p?.id === cartProduct.productID),
-            }))));
-        }
+            // assign the products to the cart items
+            setCartProducts(currentCartProducts =>
+                currentCartProducts.map(cartProduct => ({
+                    ...cartProduct,
+                    product: products.find(p => p.id === cartProduct.productID),
+                })),
+            );
+        };
+
         fetchProducts();
-
-        // assign products to the cart items
     }, [cartProducts]);
 
         console.log(cartProducts);
