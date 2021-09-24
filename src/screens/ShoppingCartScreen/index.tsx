@@ -49,6 +49,7 @@ const ShoppingCartScreen = () => {
         }
 
         const fetchProducts = async() => {
+            setLoading(true);
             const products = await Promise.all(cartProducts.map(cartProduct =>
                     DataStore.query(Product, cartProduct.productID),
             ));
@@ -71,6 +72,7 @@ const ShoppingCartScreen = () => {
 
 
 
+    // @ts-ignore
     // @ts-ignore
     return (
         <View>
@@ -122,6 +124,7 @@ const ShoppingCartScreen = () => {
                     data={cartProducts}
 
                     renderItem={({item}) => (
+                        // @ts-ignore
                         <CartProductItem key={item.id} cartItem={item}/>
                         // quantity selector
                     )}
