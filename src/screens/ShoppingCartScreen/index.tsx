@@ -2,8 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {View, Text, TextInput, ScrollView, TouchableOpacity, Image, FlatList} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import {Entypo, Feather, FontAwesome, MaterialCommunityIcons} from "@expo/vector-icons";
-import products from "../../../assets/data/cart";
-
+// import products from "../../../assets/data/cart";
 import CartProductItem from "../../components/CartProductItem";
 import Button from "../../components/Button";
 import {useNavigation} from "@react-navigation/native";
@@ -14,9 +13,10 @@ const ShoppingCartScreen = () => {
 
     const [cartProducts, setCartProducts] = useState<CartProduct[]>([]);
 
-    const totalPrice = products.reduce((summedPrice, product) => (
-        summedPrice + product.item.price * product.quantity
-    ), 0);
+    // const totalPrice = products.reduce((summedPrice, product) => (
+    //     summedPrice + product.item.price * product.quantity
+    // ), 0);
+    const totalPrice = 0;
 
     const navigation = useNavigation();
 
@@ -60,7 +60,7 @@ const ShoppingCartScreen = () => {
         // assign products to the cart items
     }, [cartProducts]);
 
-        console.log(products);
+        console.log(cartProducts);
 
 
 
