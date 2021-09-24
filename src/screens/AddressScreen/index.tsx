@@ -8,6 +8,8 @@ import {Picker} from "@react-native-picker/picker";
 import countryList from "country-list";
 import Button from '../../components/Button';
 import {useNavigation} from "@react-navigation/native";
+import {Auth, DataStore} from 'aws-amplify';
+import {CartProduct, Order} from "../../models";
 
 const countries = countryList.getData();
 
@@ -22,9 +24,23 @@ const AddressScreen = () => {
     const [addressError, setAddressError] = useState('');
 
     const saveOrder = async () => {
+        const userData = await Auth.currentAuthenticatedUser();
     //    create the new order
-
+        const newOrder = await DataStore.save(
+            new Order({
+                userSub: userData.attributes.sub,
+                fullName: fullname,
+                phoneNumber: phone,
+                country,
+                city,
+                address,
+            }),
+        )
     //    attach all the cart items to the order
+
+        const cartItems = await DataStore.query(CartProduct, cp =>
+            cp.userSub('eq', userData.attributes.sub),
+        );
 
     //    delete all the cart Items
 
