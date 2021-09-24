@@ -23,7 +23,9 @@ const App = () => {
       <StatusBar style="auto" />
 
       {/*<View style={tw`bg-gray-100`}>*/}
+      <StripeProvider publishableKey='pk_test_51JdAM1HPTF8FvliLqOoXC9oG8CSRUcMq7x9RCqUb31SMc92hGRoXMGrIa1j5S3PXRa6qA7c5LOgjHwJq6RHYR5cX00pfWUpEb7'>
         <Router />
+      </StripeProvider>
       {/*</View>*/}
     </View>
   );
