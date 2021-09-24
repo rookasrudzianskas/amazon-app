@@ -49,7 +49,6 @@ const ShoppingCartScreen = () => {
         }
 
         const fetchProducts = async() => {
-            setLoading(true);
             const products = await Promise.all(cartProducts.map(cartProduct =>
                     DataStore.query(Product, cartProduct.productID),
             ));
@@ -66,7 +65,7 @@ const ShoppingCartScreen = () => {
 
         console.log(cartProducts);
 
-        if(loading) {
+        if(cartProducts.filter(cp => !cp.product).length === 0) {
             return <ActivityIndicator size="large" color="black" style={tw`flex items-center justify-center mt-36`} />
         }
 
