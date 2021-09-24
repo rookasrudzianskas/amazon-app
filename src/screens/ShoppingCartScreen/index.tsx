@@ -31,7 +31,7 @@ const ShoppingCartScreen = () => {
             const userData = await Auth.currentAuthenticatedUser();
             console.log("This is the id", userData.attributes.sub)
         // @TODO query only my cart items
-            DataStore.query(CartProduct, (cp) => cp.productID("eq", userData.attributes.sub)).then(setCartProducts);
+            DataStore.query(CartProduct, (cp) => cp.quantity("gt", 0)).then(setCartProducts);
         }
         fetchCartProducts();
     }, []);
