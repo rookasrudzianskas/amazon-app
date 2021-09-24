@@ -87,7 +87,7 @@ const ProductScreen = () => {
                         <View style={tw`flex flex-row items-center bg-gray-100 rounded-md`}>
                             <Feather name="search" size={22} color="#37475a" style={tw`ml-2`}/>
                             <View style={tw`bg-gray-100 px-3 py-3 rounded-md`}>
-                                <TextInput placeholder="Search for something..." style={tw`text-xs text-gray-800 w-64`} >
+                                <TextInput placeholder="Search for something..." style={tw`text-xs text-gray-800  w-60`} >
                                 </TextInput>
                             </View>
                             <Feather name="camera" size={24} color="#37475a" />
