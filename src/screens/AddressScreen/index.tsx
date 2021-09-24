@@ -24,8 +24,11 @@ const AddressScreen = () => {
     const [addressError, setAddressError] = useState('');
 
     const saveOrder = async () => {
+        // get user details
         const userData = await Auth.currentAuthenticatedUser();
-    //    create the new order
+        // create a new order
+        console.log(userData.attributes.sub);
+
         const newOrder = await DataStore.save(
             new Order({
                 userSub: userData.attributes.sub,
@@ -35,49 +38,60 @@ const AddressScreen = () => {
                 city,
                 address,
             }),
-        )
-    //    attach all the cart items to the order
+        );
 
+        // fetch all cart items
         const cartItems = await DataStore.query(CartProduct, cp =>
             cp.userSub('eq', userData.attributes.sub),
         );
 
+        // attach all cart items to the order
         await Promise.all(
-            cartItems.map(cartItem => DataStore.save(new OrderProduct({
-                quantity: cartItem.quantity,
-                option: cartItem.option,
-                productID: cartItem.productID,
-                orderID: newOrder.id,
-            })))
+            cartItems.map(cartItem =>
+                DataStore.save(
+                    new OrderProduct({
+                        quantity: cartItem.quantity,
+                        option: cartItem.option,
+                        productID: cartItem.productID,
+                        orderID: newOrder.id,
+                    }),
+                ),
+            ),
         );
-    //    delete all the cart Items
 
-    //    redirect home
-    }
+        // delete all cart items
+        await Promise.all(cartItems.map(cartItem => DataStore.delete(cartItem)));
+
+        // redirect home
+        navigation.navigate('Home');
+    };
 
     const onCheckout = () => {
-        if(addressError) {
-            Alert.alert("Fix all the field errors, before submitting the order");
-            return;
-        }
-        if(!fullname) {
-            Alert.alert('Your name is needeed, 🥰');
+        if (addressError) {
+            Alert.alert('Fix all field errors before submiting');
             return;
         }
 
-        if(!phone) {
-            Alert.alert('Your phone is needeed, ☎️');
+        if (!fullname) {
+            Alert.alert('Please fill in the fullname field');
             return;
         }
 
+        if (!phone) {
+            Alert.alert('Please fill in the phone number field');
+            return;
+        }
+
+        console.warn('Success. CHeckout');
         saveOrder();
-    }
+    };
+
 
     const validateAddress = () => {
-        if(address.length < 3) {
-            setAddressError('Address must be at least 3 characters');
+        if (address.length < 3) {
+            setAddressError('Address is too short');
         }
-    }
+    };
 
     const navigation = useNavigation();
 
@@ -115,6 +129,10 @@ const AddressScreen = () => {
                                             ))}
                                         <Picker.Item label="JavaScript" value="js" />
                                     </Picker>
+                                </View>
+
+                                <View style={tw`mb-24`}>
+                                    <Button  bgcolor={'400'}  color={'bg-yellow-400'}  text={'Checkout'} onPress={onCheckout}/>
                                 </View>
 
                                         {/*------------- full name ------------------*/}
@@ -238,9 +256,7 @@ const AddressScreen = () => {
                                             </View>
                                         </View>
 
-                                        <View style={tw`mb-24`}>
-                                            <Button  bgcolor={'400'}  color={'bg-yellow-400'}  text={'Checkout'} onPress={onCheckout}/>
-                                        </View>
+
 
                                     </ScrollView>
                             </KeyboardAvoidingView>
