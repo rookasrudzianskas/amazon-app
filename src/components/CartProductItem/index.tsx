@@ -86,7 +86,7 @@ const CartProductItem = ({cartItem}: CartProductItemProps) => {
 
                                             <Text>
                                                 {[0, 0, 0, 0, 0].map((_, i) =>
-                                                    <FontAwesome key={i} name={i < Math.floor(product?.avgRating) ? 'star' : 'star-o'} size={23} color="orange" />
+                                                    <FontAwesome key={i} name={i < Math.floor(product?.avgRating as number) ? 'star' : 'star-o'} size={23} color="orange" />
                                                 )}
                                             </Text>
 

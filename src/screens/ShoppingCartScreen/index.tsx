@@ -62,7 +62,19 @@ const ShoppingCartScreen = () => {
         fetchProducts();
     }, [cartProducts]);
 
-        console.log(cartProducts);
+    useEffect(() => {
+        const subscription = cartProducts.map(cp =>
+            DataStore.observe(CartProduct, cp.id).subscribe(msg => {
+            console.log(msg.model, msg.opType, msg.element);
+            }),
+        );
+        return () => {
+            // @ts-ignore
+            subscription.forEach(sub => sub.unsubscribe());
+        };
+    }, [cartProducts]);
+
+        // console.log(cartProducts);
 
         if(cartProducts.filter(cp => !cp.product).length !== 0) {
             return <ActivityIndicator size="large" color="black" style={tw`flex items-center justify-center mt-36`} />
