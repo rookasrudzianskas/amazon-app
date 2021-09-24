@@ -100,7 +100,7 @@ const AddressScreen = () => {
     const navigation = useNavigation();
     const route = useRoute();
     // @ts-ignore
-    const amount = route.params?.totalPrice || 0;
+    const amount = Math.floor(route.params?.totalPrice * 100 || 0);
 
     useEffect(() => {
         initPaymentSheet();
