@@ -7,7 +7,7 @@ import CartProductItem from "../../components/CartProductItem";
 import Button from "../../components/Button";
 import {useNavigation} from "@react-navigation/native";
 import {CartProduct, Product} from "../../models";
-import { DataStore } from 'aws-amplify';
+import {Auth, DataStore} from 'aws-amplify';
 
 const ShoppingCartScreen = () => {
 
@@ -28,8 +28,10 @@ const ShoppingCartScreen = () => {
 
     useEffect(() => {
         const fetchCartProducts = async() => {
+            const userData = await Auth.currentAuthenticatedUser();
+            console.log("This is the id", userData.attributes.sub)
         // @TODO query only my cart items
-            DataStore.query(CartProduct).then(setCartProducts);
+            DataStore.query(CartProduct, (cp) => cp.productID("eq", userData.attributes.sub)).then(setCartProducts);
         }
         fetchCartProducts();
     }, []);
