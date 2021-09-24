@@ -1,6 +1,7 @@
 
 
 exports.handler = async (event) => {
+    console.log(event);
     // TODO implement
     const response = {
         statusCode: 200,
@@ -8,8 +9,8 @@ exports.handler = async (event) => {
     //  headers: {
     //      "Access-Control-Allow-Origin": "*",
     //      "Access-Control-Allow-Headers": "*"
-    //  }, 
-        body: JSON.stringify('Hello from Lambda!'),
+    //  },
+        body: JSON.stringify(event),
     };
     return response;
 };
