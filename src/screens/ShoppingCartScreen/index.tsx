@@ -43,6 +43,7 @@ const ShoppingCartScreen = () => {
     useEffect(() => {
         // query all products that are used in the cart
         if(cartProducts.filter(cp => !cp.product).length === 0){
+            setLoading(false);
             return;
         }
 
