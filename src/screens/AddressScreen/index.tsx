@@ -322,12 +322,6 @@ const AddressScreen = () => {
                 </View>
             </View>
 
-
-
-            {/*<View style={tw`bg-gray-100 px-3 py-3 rounded-md`}>*/}
-            {/*    <TextInput placeholder="Search for something..." style={tw`text-xs text-gray-800 w-64`} >*/}
-            {/*    </TextInput>*/}
-            {/*</View>*/}
         </View>
     );
 };
