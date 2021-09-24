@@ -22,6 +22,7 @@ const CartProductItem = ({cartItem}: CartProductItemProps) => {
         const original = await DataStore.query(CartProduct, cartProduct.id);
 
         await DataStore.save(
+        // @ts-ignore
             CartProduct.copyOf(original, updated => {
                 updated.quantity = newQuantity;
             })
