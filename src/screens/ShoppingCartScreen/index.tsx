@@ -15,9 +15,16 @@ const ShoppingCartScreen = () => {
 
     const navigation = useNavigation();
 
+
+
+    const totalPrice = cartProducts.reduce((summedPrice, product) => (
+        summedPrice + (product?.product?.price || 0) * product.quantity
+    ), 0);
+
+
     const onCheckout = () => {
         // @ts-ignore
-        navigation.navigate('addressScreen');
+        navigation.navigate('addressScreen', {totalPrice});
     }
 
 
@@ -108,10 +115,6 @@ const ShoppingCartScreen = () => {
             return <ActivityIndicator size="large" color="black" style={tw`flex items-center justify-center mt-36`} />
         }
 
-
-    const totalPrice = cartProducts.reduce((summedPrice, product) => (
-        summedPrice + (product?.product?.price || 0) * product.quantity
-    ), 0);
 
 
 

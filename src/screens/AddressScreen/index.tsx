@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, Text, TextInput, ScrollView, TouchableOpacity, Alert, KeyboardAvoidingView, Platform} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import {Entypo, Feather, MaterialCommunityIcons} from "@expo/vector-icons";
@@ -7,9 +7,10 @@ import {Picker} from "@react-native-picker/picker";
 // @ts-ignore
 import countryList from "country-list";
 import Button from '../../components/Button';
-import {useNavigation} from "@react-navigation/native";
-import {Auth, DataStore} from 'aws-amplify';
+import {useNavigation, useRoute} from "@react-navigation/native";
+import {API, Auth, DataStore, graphqlOperation} from 'aws-amplify';
 import {CartProduct, Order, OrderProduct} from "../../models";
+import {createPaymentIntent} from "../../graphql/mutations";
 
 const countries = countryList.getData();
 
@@ -97,6 +98,22 @@ const AddressScreen = () => {
     };
 
     const navigation = useNavigation();
+    const route = useRoute();
+    // @ts-ignore
+    const amount = route.params?.totalPrice || 0;
+
+    useEffect(() => {
+        initPaymentSheet();
+    }, []);
+
+    const fetchPaymentIntent = async () => {
+        const response = await API.graphql(graphqlOperation(createPaymentIntent, {amount}));
+        console.log(response);
+    }
+
+    const initPaymentSheet = async () => {
+        await fetchPaymentIntent();
+    }
 
     const goBack = () => {
         // @ts-ignore
