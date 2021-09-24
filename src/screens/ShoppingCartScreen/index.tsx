@@ -36,6 +36,9 @@ const ShoppingCartScreen = () => {
         fetchCartProducts();
     }, []);
 
+
+    //-----------------------------------------------------------------------------------------
+
     useEffect(() => {
         if (cartProducts.filter(cp => !cp.product).length === 0) {
             return;
@@ -62,6 +65,9 @@ const ShoppingCartScreen = () => {
         fetchProducts();
     }, [cartProducts]);
 
+
+    //-----------------------------------------------------------------------------------------
+
     useEffect(() => {
         const subscriptions = cartProducts.map(cp =>
             DataStore.observe(CartProduct, cp.id).subscribe(msg => {
@@ -87,6 +93,7 @@ const ShoppingCartScreen = () => {
         };
     }, [cartProducts]);
 
+    //-----------------------------------------------------------------------------------------
         // console.log(cartProducts);
 
         if(cartProducts.filter(cp => !cp.product).length !== 0) {
