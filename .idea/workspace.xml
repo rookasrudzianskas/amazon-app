@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d7b8be3b-8a07-4423-b8da-1d51c1a0d238" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/AddressScreen/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/AddressScreen/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/amazon.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/amazon.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +74,7 @@
       <option name="presentableId" value="Default" />
       <updated>1632213472501</updated>
       <workItem from="1632213476886" duration="17788000" />
-      <workItem from="1632314834585" duration="48954000" />
+      <workItem from="1632314834585" duration="49505000" />
     </task>
     <servers />
   </component>
