@@ -1,6 +1,6 @@
 projects:
   amazonapp:
-    schemaPath: src/graphql/schema.json
+    schemaPath: amplify/backend/api/amazonapp/build/schema.graphql
     includes:
       - src/graphql/**/*.ts
     excludes:

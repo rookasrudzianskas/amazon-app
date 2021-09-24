@@ -14,6 +14,12 @@
     "categories": {
       "auth": {
         "amazonapp75d412e4": {}
+      },
+      "function": {
+        "CreatePaymentIntent": {
+          "deploymentBucketName": "amplify-amazonapp-dev-110122-deployment",
+          "s3Key": "amplify-builds/CreatePaymentIntent-374d56674154432b586d-build.zip"
+        }
       }
     }
   }
