@@ -22,7 +22,7 @@
         },
         "StripeWebhook": {
           "deploymentBucketName": "amplify-amazonapp-dev-110122-deployment",
-          "s3Key": "amplify-builds/StripeWebhook-67354533646a416c4e52-build.zip"
+          "s3Key": "amplify-builds/StripeWebhook-6855586b59336647584d-build.zip"
         }
       }
     }

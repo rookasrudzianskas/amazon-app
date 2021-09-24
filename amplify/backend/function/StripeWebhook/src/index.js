@@ -1,5 +1,8 @@
 exports.handler = async event => {
+    console.log(event);
+    console.log(event.body);
     const body = JSON.parse(event.body);
+    console.log(event.body);
 
     // Handle the event
     switch (body.type) {
