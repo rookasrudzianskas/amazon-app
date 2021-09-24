@@ -1,5 +1,6 @@
 {
   "expo": {
+
     "name": "amazon",
     "slug": "amazon",
     "version": "1.0.0",
@@ -10,6 +11,15 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "plugins": [
+      [
+        "@stripe/stripe-react-native",
+        {
+          "merchantIdentifier": "rokas",
+          "enableGooglePay": "false"
+        }
+      ]
+    ],
     "updates": {
       "fallbackToCacheTimeout": 0
     },
