@@ -49,7 +49,7 @@ const AddressScreen = () => {
                 productID: cartItem.productID,
                 orderID: newOrder.id,
             })))
-        )
+        );
     //    delete all the cart Items
 
     //    redirect home
@@ -239,7 +239,7 @@ const AddressScreen = () => {
                                         </View>
 
                                         <View style={tw`mb-24`}>
-                                            <Button  bgcolor={'400'}  color={'bg-yellow-400'}  text={'Use this address'} onPress={onCheckout}/>
+                                            <Button  bgcolor={'400'}  color={'bg-yellow-400'}  text={'Checkout'} onPress={onCheckout}/>
                                         </View>
 
                                     </ScrollView>
