@@ -13,7 +13,7 @@ interface CartProductItemProps {
         id: string,
         quantity: number,
         option?: string,
-        item: {
+        product: {
             id: string,
             title: string,
             image: string,
@@ -26,7 +26,7 @@ interface CartProductItemProps {
 }
 
 const CartProductItem = ({cartItem}: CartProductItemProps) => {
-    const {quantity: quantityProp, item} = cartItem;
+    const {quantity: quantityProp, product} = cartItem;
     const [quantity, setQuantity] = useState(quantityProp);
 
     const navigation = useNavigation();
@@ -47,11 +47,11 @@ const CartProductItem = ({cartItem}: CartProductItemProps) => {
                             <View style={tw` border-2 border-gray-200 rounded-md`}>
                                 <View style={tw`flex flex-row px-2 items-center`}>
                                     <View style={tw``}>
-                                        <Image style={[styles.image, tw``]} source={{uri: item?.image || ''}} />
+                                        <Image style={[styles.image, tw``]} source={{uri: product?.image || ''}} />
                                     </View>
 
                                     <View style={tw`flex ml-5 mt-5`}>
-                                        <Text numberOfLines={3}  style={[styles.textSize, tw`text-lg`]}>{item?.title || ''}</Text>
+                                        <Text numberOfLines={3}  style={[styles.textSize, tw`text-lg`]}>{product?.title || ''}</Text>
 
                                         <View style={tw`flex flex-row items-center mt-2`}>
                                             <Text style={tw`pl-1 bg-yellow-500 py-2 w-28 px-1 rounded-md text-white font-bold`}>#1 Best Seller</Text>
@@ -61,7 +61,7 @@ const CartProductItem = ({cartItem}: CartProductItemProps) => {
                                         <View>
                                             <View style={tw`flex flex-row mt-2 mb-4 items-center`}>
                                                 <Text style={tw`text-black text-lg`}>from </Text>
-                                                <Text style={tw`text-red-600 text-xl font-bold`}>${item?.price || '1.00'}
+                                                <Text style={tw`text-red-600 text-xl font-bold`}>${product?.price.toFixed(2) || '1.00'}
                                                 </Text>
                                                 {/*{item.oldPrice && <Text style={tw`text-xs font-normal flex line-through`}> ${item?.oldPrice || '1.00'}</Text>}*/}
                                             </View>
@@ -83,7 +83,7 @@ const CartProductItem = ({cartItem}: CartProductItemProps) => {
 
                                             <Text>
                                                 {[0, 0, 0, 0, 0].map((_, i) =>
-                                                    <FontAwesome key={i} name={i < Math.floor(item?.avgRating) ? 'star' : 'star-o'} size={23} color="orange" />
+                                                    <FontAwesome key={i} name={i < Math.floor(product?.avgRating) ? 'star' : 'star-o'} size={23} color="orange" />
                                                 )}
                                             </Text>
 
