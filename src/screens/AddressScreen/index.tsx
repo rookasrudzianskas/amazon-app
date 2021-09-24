@@ -83,7 +83,7 @@ const AddressScreen = () => {
         //     return;
         // }
 
-        // console.warn('Success. CHeckout');
+        // console.warn('Success. Checkout');
         saveOrder();
     };
 
