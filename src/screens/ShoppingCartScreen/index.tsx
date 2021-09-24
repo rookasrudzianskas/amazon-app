@@ -41,21 +41,26 @@ const ShoppingCartScreen = () => {
 
     useEffect(() => {
         // query all products that are used in the cart
+        if(cartProducts.filter(cp => !cp.product).length === 0){
+            return;
+        }
+
         const fetchProducts = async() => {
             const products = await Promise.all(cartProducts.map(cartProduct =>
                     DataStore.query(Product, cartProduct.productID),
             ));
-        }
 
+            setCartProducts(currentCartProducts => (cartProducts.map(cartProduct => ({
+                ...cartProduct,
+                product: products.find(p => p?.id === cartProduct.productID),
+            }))));
+        }
         fetchProducts();
 
-        console.log(products);
         // assign products to the cart items
-
-
-
     }, [cartProducts]);
 
+        console.log(products);
 
 
 
