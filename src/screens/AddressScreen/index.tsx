@@ -23,6 +23,7 @@ const AddressScreen = () => {
     const [address1, setAddress1] = useState('');
     const [city, setCity] = useState('');
     const [addressError, setAddressError] = useState('');
+    const [clientSecret, setClientSecret] = useState<String | null>(null);
 
     const saveOrder = async () => {
         // get user details
@@ -103,16 +104,23 @@ const AddressScreen = () => {
     const amount = Math.floor(route.params?.totalPrice * 100 || 0);
 
     useEffect(() => {
-        initPaymentSheet();
+        fetchPaymentIntent();
     }, []);
 
     const fetchPaymentIntent = async () => {
         const response = await API.graphql(graphqlOperation(createPaymentIntent, {amount}));
-        console.log(response);
+        // @ts-ignore
+        setClientSecret(response.data.createPaymentIntent.clientSecret);
     }
 
+    useEffect(() => {
+        if(clientSecret) {
+            initPaymentSheet();
+        }
+    }, [clientSecret]);
+
     const initPaymentSheet = async () => {
-        await fetchPaymentIntent();
+
     }
 
     const goBack = () => {
