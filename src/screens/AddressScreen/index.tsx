@@ -90,6 +90,8 @@ const AddressScreen = () => {
         // saveOrder();
     //    handle payments
 
+        openPaymentSheet();
+
     };
 
 
