@@ -26,13 +26,15 @@ const ShoppingCartScreen = () => {
         navigation.navigate('cart');
     }
 
-    useEffect(() => {
-        const fetchCartProducts = async() => {
-            const userData = await Auth.currentAuthenticatedUser();
-            // console.log("This is the id", userData.attributes.sub)
+    const fetchCartProducts = async() => {
+        const userData = await Auth.currentAuthenticatedUser();
+        // console.log("This is the id", userData.attributes.sub)
         // @TODO query only my cart items
-            DataStore.query(CartProduct, (cp) => cp.userSub("eq", userData.attributes.sub)).then(setCartProducts);
-        }
+        DataStore.query(CartProduct, (cp) => cp.userSub("eq", userData.attributes.sub)).then(setCartProducts);
+    }
+
+    useEffect(() => {
+
         fetchCartProducts();
     }, []);
 
@@ -64,6 +66,12 @@ const ShoppingCartScreen = () => {
 
         fetchProducts();
     }, [cartProducts]);
+
+    useEffect(() => {
+        // @ts-ignore
+        const subscription = DataStore.observe(CartProduct).subscribe(msg => fetchCartProducts());
+        return subscription.unsubscribe();
+    }, []);
 
 
     //-----------------------------------------------------------------------------------------
