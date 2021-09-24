@@ -21,6 +21,10 @@ const AddressScreen = () => {
     const [city, setCity] = useState('');
     const [addressError, setAddressError] = useState('');
 
+    const saveOrder = async () => {
+
+    }
+
     const onCheckout = () => {
         if(addressError) {
             Alert.alert("Fix all the field errors, before submitting the order");
@@ -35,6 +39,8 @@ const AddressScreen = () => {
             Alert.alert('Your phone is needeed, ☎️');
             return;
         }
+
+        saveOrder();
     }
 
     const validateAddress = () => {
