@@ -7,30 +7,25 @@ import styles from "../../screens/HomeScreen/style";
 import product from "../../../assets/data/product";
 import QuantitySelector from "../QuantitySelector";
 import {useNavigation} from "@react-navigation/native";
+import { DataStore } from 'aws-amplify';
+import {CartProduct} from "../../models";
 
 interface CartProductItemProps {
-    cartItem: {
-        id: string,
-        quantity: number,
-        option?: string,
-        product: {
-            id: string,
-            title: string,
-            image: string,
-            avgRating: number,
-            ratings: number,
-            price: number,
-            oldPrice?: number, // this property is optional
-        }
-    },
+    cartItem: CartProduct;
 }
 
 const CartProductItem = ({cartItem}: CartProductItemProps) => {
-    const {quantity: product} = cartItem;
+    const {product, ...cartProduct} = cartItem;
     // const [quantity, setQuantity] = useState(quantityProp);
 
-    const updateQuantity = async () => {
+    const updateQuantity = async (newQuantity: number) => {
+        const original = await DataStore.query(CartProduct, cartProduct.id);
 
+        await DataStore.save(
+            CartProduct.copyOf(original, updated => {
+                updated.quantity = newQuantity;
+            })
+        )
     }
 
 
@@ -38,7 +33,8 @@ const CartProductItem = ({cartItem}: CartProductItemProps) => {
     const navigation = useNavigation();
     const onGoTo = () => {
         // @ts-ignore
-        navigation.navigate('productScreen');
+        // navigation.navigate('productScreen');
+        console.log('someting');
     }
 
     return (
@@ -46,7 +42,7 @@ const CartProductItem = ({cartItem}: CartProductItemProps) => {
 
             <View>
                 {/*    the product shit */}
-                <TouchableOpacity onPress={onGoTo} activeOpacity={0.8}>
+                <TouchableOpacity activeOpacity={0.8}>
                     <View>
                         <View style={tw`m-2 bg-white shadow-md`}>
                             {/*    product component */}
@@ -105,7 +101,7 @@ const CartProductItem = ({cartItem}: CartProductItemProps) => {
                                 <View style={tw``}>
                                     <View style={tw`mt-3 ml-20 flex flex-row items-center mb-3`}>
                                         <View>
-                                            <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
+                                            <QuantitySelector quantity={cartProduct.quantity} setQuantity={updateQuantity} />
                                         </View>
                                         <View style={tw`flex flex-row`}>
                                             <TouchableOpacity activeOpacity={0.5}>
