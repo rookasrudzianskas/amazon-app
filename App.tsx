@@ -7,6 +7,7 @@ import Amplify from 'aws-amplify';
 import config from './src/aws-exports';
 // @ts-ignore
 import { withAuthenticator } from 'aws-amplify-react-native';
+import {StripeProvider} from '@stripe/stripe-react-native';
 
 Amplify.configure({
   ...config,
