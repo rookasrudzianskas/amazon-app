@@ -22,7 +22,13 @@ const AddressScreen = () => {
     const [addressError, setAddressError] = useState('');
 
     const saveOrder = async () => {
+    //    create the new order
 
+    //    attach all the cart items to the order
+
+    //    delete all the cart Items
+
+    //    redirect home
     }
 
     const onCheckout = () => {
